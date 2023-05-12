@@ -1,0 +1,49 @@
+{
+  "name": "gyg-wc",
+  "description": "GetYourGuide Web Component",
+  "version": "0.1.0",
+  "author": "Tom Theisel <tom.theisel@gmail.com>",
+  "license": "ISC",
+  "keywords": [
+    "getyourguide",
+    "tours",
+    "travel",
+    "web-component",
+    "wc"
+  ],
+  "type": "module",
+  "main": "package.json",
+  "exports": {
+    ".": "./lib/index.js",
+    "./utils": "./lib/utils.js"
+  },
+  "typesVersions": {
+    "*": {
+      "./react": [
+        "./react.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "lib",
+    "react.d.ts"
+  ],
+  "scripts": {
+    "build": "npx esbuild ./src/index.ts ./src/utils --bundle --format=esm --outdir=lib --tsconfig=tsconfig.json && npx tsc",
+    "prepublishOnly": "pnpm build"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theisel/getyourguide.git",
+    "directory": "packages/web-component"
+  },
+  "bugs": {
+    "url": "https://github.com/theisel/getyourguide/issues"
+  },
+  "homepage": "https://github.com/theisel/getyourguide#readme"
+}

@@ -1,0 +1,12 @@
+# Directories
+node_modules/
+
+# environment variables
+.env
+.env.*
+
+# logs
+*.log
+
+# Typescript
+*.tsbuildinfo

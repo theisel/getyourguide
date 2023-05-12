@@ -1,0 +1,55 @@
+{
+  "name": "root",
+  "description": "Sanity Plugin & Web Component for GetYourGuide",
+  "version": "0.0.0",
+  "private": true,
+  "author": "Tom Theisel <tom.theisel@gmail.com>",
+  "license": "ISC",
+  "keywords": [
+    "getyourguide",
+    "sanity",
+    "sanity-io",
+    "sanity-plugin",
+    "tours",
+    "travel",
+    "web-component"
+  ],
+  "scripts": {
+    "build-webcomponent": "pnpm --filter gyg-wc build",
+    "format": "prettier --write .",
+    "prepare": "./scripts/prepare.sh",
+    "lint": "npx eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.1",
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.5",
+    "@typescript-eslint/parser": "^5.59.5",
+    "esbuild": "^0.17.18",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-yml": "^1.7.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theisel/getyourguide.git"
+  },
+  "bugs": {
+    "url": "https://github.com/theisel/getyourguide/issues"
+  },
+  "homepage": "https://github.com/theisel/getyourguide#readme",
+  "engines": {
+    "node": ">=18.16",
+    "pnpm": ">=8.4"
+  },
+  "packageManager": "pnpm@8.4.0"
+}

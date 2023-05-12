@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "lib",
+    "lib": ["ESNext", "DOM"],
+    "jsx": "preserve"
+  },
+  "include": ["lib"]
+}

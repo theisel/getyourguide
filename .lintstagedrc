@@ -1,0 +1,3 @@
+{
+  "*.{ts,tsx,yaml,yml}": ["pnpm lint"]
+}
