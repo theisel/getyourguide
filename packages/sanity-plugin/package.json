@@ -13,9 +13,16 @@
     "travel"
   ],
   "type": "module",
-  "main": "package.json",
   "exports": {
-    ".": "./index.ts"
+    ".": "./lib/index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "lib/*",
+        "env.d.ts"
+      ]
+    }
   },
   "files": [
     "lib",
