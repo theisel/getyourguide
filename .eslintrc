@@ -8,6 +8,7 @@
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
+  "env": { "browser": true },
   "overrides": [
     {
       "files": ["*.yaml", "*.yml"],
