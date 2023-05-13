@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React from "react";
 import type { InputProps } from "sanity";
 import type { GetYourGuideActivityValue } from "./types";
 
@@ -15,7 +17,7 @@ export default function GetYourGuideActivityWidget(props: InputProps) {
   const { partnerId, lang } = props.schemaType.options ?? {};
   const { size } = props.schemaType.initialValue ?? {};
 
-  const widgetAttrs = propsToAttrs<JSX.IntrinsicElements["getyourguide-activity"]>({
+  const widgetAttrs = propsToAttrs<JSX.GetYourGuideActivityAttributes>({
     partnerId,
     lang,
     size,

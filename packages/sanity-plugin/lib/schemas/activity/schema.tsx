@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React from "react";
 import { defineType } from "sanity";
 import TypeInput from "./TypeInput";
 import QueryField from "./QueryField";

@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React from "react";
 import { useFormValue, type FieldProps } from "sanity";
 import type { GetYourGuideActivityValue } from "./types";
 

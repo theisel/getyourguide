@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React from "react";
 import type { InputProps } from "sanity";
 import type { GetYourGuideCityValue } from "./types";
 
@@ -23,7 +25,7 @@ export default function GetYourGuideCityWidget(props: InputProps) {
     };
   }, [value?.cityId]);
 
-  const widgetAttrs = propsToAttrs<JSX.IntrinsicElements["getyourguide-city"]>({
+  const widgetAttrs = propsToAttrs<JSX.GetYourGuideCityAttributes>({
     partnerId,
     cityId: cityId ?? "",
     lang,
