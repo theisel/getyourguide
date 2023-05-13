@@ -5,5 +5,5 @@
     "lib": ["ESNext", "DOM"],
     "jsx": "preserve"
   },
-  "include": ["lib"]
+  "include": ["lib", "env.d.ts"]
 }
