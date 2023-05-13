@@ -12,15 +12,15 @@
     "wc"
   ],
   "type": "module",
-  "main": "package.json",
   "exports": {
     ".": "./lib/index.js",
     "./utils": "./lib/utils.js"
   },
   "typesVersions": {
     "*": {
-      "./react": [
-        "./react.d.ts"
+      "*": [
+        "lib/*",
+        "react.d.ts"
       ]
     }
   },
