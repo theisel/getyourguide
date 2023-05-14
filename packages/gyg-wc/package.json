@@ -1,51 +1,46 @@
 {
-  "name": "sanity-plugin-getyourguide",
-  "description": "Sanity Plugin for GetYourGuide",
+  "name": "gyg-wc",
+  "description": "GetYourGuide Web Component",
   "version": "0.1.1",
   "author": "Tom Theisel <tom.theisel@gmail.com>",
   "license": "ISC",
   "keywords": [
     "getyourguide",
-    "sanity",
-    "sanity-io",
-    "sanity-plugin",
     "tours",
-    "travel"
+    "travel",
+    "web-component",
+    "wc"
   ],
   "type": "module",
   "exports": {
-    ".": "./lib/index.ts"
+    ".": "./lib/index.js",
+    "./utils": "./lib/utils.js"
   },
   "typesVersions": {
     "*": {
       "*": [
         "lib/*",
-        "env.d.ts"
+        "react.d.ts"
       ]
     }
   },
   "files": [
     "lib",
-    "env.d.ts"
+    "react.d.ts"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "gyg-wc": "workspace:*"
+    "build": "npx esbuild ./src/index.ts ./src/utils --bundle --format=esm --outdir=lib --tsconfig=tsconfig.json && npx tsc",
+    "prepublishOnly": "pnpm build"
   },
   "devDependencies": {
-    "@sanity/icons": "^2.3",
-    "@sanity/ui": "^1.3",
     "@types/react": "^18.2.6",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "sanity": "^3.10.1"
+    "react-dom": "^18.2.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/theisel/getyourguide.git",
-    "directory": "packages/sanity-plugin"
+    "directory": "packages/gyg-wc"
   },
   "bugs": {
     "url": "https://github.com/theisel/getyourguide/issues"
