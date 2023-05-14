@@ -29,7 +29,7 @@
     "react.d.ts"
   ],
   "scripts": {
-    "build": "npx esbuild ./src/index.ts ./src/utils --bundle --minify --format=esm --outdir=lib --tsconfig=tsconfig.json && npx tsc",
+    "build": "npx esbuild ./src/index.ts ./src/utils --bundle --format=esm --outdir=lib --tsconfig=tsconfig.json && npx tsc",
     "prepublishOnly": "pnpm build"
   },
   "devDependencies": {
