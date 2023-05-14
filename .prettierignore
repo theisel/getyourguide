@@ -1,7 +1,7 @@
 # Directories
 .changeset/
 .husky/
-**/web-component/lib/
+**/gyg-wc/lib/
 
 # Misc
 pnpm-lock.yaml
