@@ -1,5 +1,12 @@
 # sanity-plugin-getyourguide
 
+## 0.1.2
+
+### Patch Changes
+
+- Updated dependencies [ece2282]
+  - gyg-wc@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes
