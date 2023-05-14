@@ -1,10 +1,10 @@
-# Sanity.io plugin for _GetYourGuide_
+# GetYourGuide Sanity.io plugin
 
 This is a **Sanity Studio v3** plugin.
 
 &nbsp;
 
-## Getting started
+## Getting Started
 
 ### Installation
 
@@ -16,7 +16,7 @@ $ npm install sanity-plugin-getyourguide
 
 &nbsp;
 
-## Usage
+### Usage
 
 ```ts
 /* sanity.config.ts (or .js) */
