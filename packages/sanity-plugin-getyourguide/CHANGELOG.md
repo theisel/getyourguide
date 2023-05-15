@@ -1,5 +1,11 @@
 # sanity-plugin-getyourguide
 
+## 0.1.3
+
+### Patch Changes
+
+- 3b3c0db: Added `peerDependencies` to `package.json`
+
 ## 0.1.2
 
 ### Patch Changes
