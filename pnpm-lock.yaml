@@ -56,22 +56,22 @@ importers:
   examples/gyg-wc/astro:
     dependencies:
       astro:
-        specifier: ^2.4.5
+        specifier: latest
         version: 2.4.5(@types/node@20.1.7)
       gyg-wc:
-        specifier: workspace:*
+        specifier: latest
         version: link:../../../packages/gyg-wc
 
   examples/gyg-wc/html:
     dependencies:
       gyg-wc:
-        specifier: workspace:*
+        specifier: latest
         version: link:../../../packages/gyg-wc
 
   examples/gyg-wc/react:
     dependencies:
       gyg-wc:
-        specifier: workspace:*
+        specifier: latest
         version: link:../../../packages/gyg-wc
       react:
         specifier: ^18.2.0
@@ -2605,7 +2605,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001487
+      caniuse-lite: 1.0.30001488
       electron-to-chromium: 1.4.397
       node-releases: 2.0.10
       update-browserslist-db: 1.0.11(browserslist@4.21.5)
@@ -2677,8 +2677,8 @@ packages:
     resolution: {integrity: sha512-dU+Tx2fsypxTgtLoE36npi3UqcjSSMNYfkqgmoEhtZrraP5VWq0K7FkWVTYa8eMPtnU/G2txVsfdCJTn9uzpuQ==}
     dev: true
 
-  /caniuse-lite@1.0.30001487:
-    resolution: {integrity: sha512-83564Z3yWGqXsh2vaH/mhXfEM0wX+NlBCm1jYHOb97TrTWJEmPTccZgeLTPBUUb0PNVo+oomb7wkimZBIERClA==}
+  /caniuse-lite@1.0.30001488:
+    resolution: {integrity: sha512-NORIQuuL4xGpIy6iCCQGN4iFjlBXtfKWIenlUuyZJumLRIindLb7wXM+GO8erEhb7vXfcnf4BAg2PrSDN5TNLQ==}
 
   /ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
