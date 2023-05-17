@@ -19,7 +19,7 @@
   "typesVersions": {
     "*": {
       "*": [
-        "lib/*"
+        "lib/@types/*"
       ],
       "astro": [
         "astro.d.ts"
