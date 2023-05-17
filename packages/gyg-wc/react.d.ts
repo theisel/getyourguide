@@ -1,27 +1,25 @@
-import { HTMLAttributes } from "react";
+export {};
 
 declare global {
-  namespace JSX {
+  namespace React.JSX {
     interface IntrinsicElements {
-      "getyourguide-activity": GetYourGuideActivityAttributes;
-      "getyourguide-city": GetYourGuideCityAttributes;
+      "getyourguide-activity": GetYourGuideActivityAttributes & HTMLAttributes<"div">;
+      "getyourguide-city": GetYourGuideCityAttributes & HTMLAttributes<"div">;
     }
 
     interface GetYourGuideActivityAttributes extends GetYourGuideAttributes {
       "query-type": "search" | "location" | "tours";
       query: string;
-      exclude?: string[];
-      size?: number;
+      exclude?: string;
+      size?: number | string;
     }
 
     interface GetYourGuideCityAttributes extends GetYourGuideAttributes {
       "city-id": string;
     }
 
-    interface GetYourGuideAttributes extends HTMLAttributes<HTMLElement> {
+    interface GetYourGuideAttributes extends Pick<HTMLAttributes<"div">, "lang"> {
       "partner-id": string;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      children?: any;
     }
   }
 }
