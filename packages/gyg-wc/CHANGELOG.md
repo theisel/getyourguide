@@ -1,5 +1,27 @@
 # gyg-wc
 
+## 0.2.0
+
+### Minor Changes
+
+- 89a2fe7: **BREAKING CHANGE**
+
+  Removed setting `lang` to `en` when undefined
+
+- 89a2fe7: Added `astro.d.ts` for `Astro` projects
+
+### Patch Changes
+
+- 89a2fe7: &#9656; **gyg-wc/utils**
+
+  Fixes `propsToAttrs` utility function
+
+  - Allows for `snake_case` property names
+  - Consecutive uppercase letters are no longer separated by hyphens
+
+- 89a2fe7: Fixes missing `export` declaration
+- 89a2fe7: Fixes `react.d.ts` for `React` projects
+
 ## 0.1.2
 
 ### Patch Changes
