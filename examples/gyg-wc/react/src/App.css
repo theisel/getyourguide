@@ -1,0 +1,10 @@
+h1 {
+  display: grid;
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.stack {
+  display: grid;
+  gap: 4rem;
+}

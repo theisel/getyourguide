@@ -1,0 +1,43 @@
+---
+import type { CamelCaseKeys } from "../lib/types";
+import { propsToAttrs } from "gyg-wc/utils";
+
+type ActivityAttributes = Omit<astroHTML.JSX.GetYourGuideActivityAttributes, "partner-id" | "lang">;
+type CityAttributes = Omit<astroHTML.JSX.GetYourGuideCityAttributes, "partner-id" | "lang">;
+type CheckHasAllProperties<T, U> = keyof U extends keyof T ? T : never;
+
+type Widget<W extends string> = {
+  widget: W;
+};
+
+type ActivityProps = Widget<"activity"> &
+  CheckHasAllProperties<
+    {
+      queryType: string;
+      query: string;
+      exclude?: string;
+      size?: string;
+    },
+    CamelCaseKeys<ActivityAttributes>
+  >;
+
+type CityProps = Widget<"city"> &
+  CheckHasAllProperties<
+    {
+      cityId: string;
+    },
+    CamelCaseKeys<CityAttributes>
+  >;
+
+export type Props = ActivityProps | CityProps;
+
+const { widget, ...props } = Astro.props;
+const Widget = `getyourguide-${widget}`;
+const attrs = propsToAttrs(props);
+---
+
+<Widget {...attrs} />
+
+<script>
+  import "gyg-wc";
+</script>
