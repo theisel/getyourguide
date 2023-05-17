@@ -16,7 +16,7 @@ export default function QueryField(props: FieldProps) {
       description = `A comma (,) seperated list of tour id's`;
       break;
     case "location":
-      description = `Enter the location ID`;
+      description = `Enter location/city id`;
       break;
   }
 

@@ -1,10 +1,10 @@
 export {};
 
 declare global {
-  namespace React.JSX {
+  namespace astroHTML.JSX {
     interface IntrinsicElements {
-      "getyourguide-activity": GetYourGuideActivityAttributes & HTMLAttributes<"div">;
-      "getyourguide-city": GetYourGuideCityAttributes & HTMLAttributes<"div">;
+      "getyourguide-activity": GetYourGuideActivityAttributes & HTMLAttributes;
+      "getyourguide-city": GetYourGuideCityAttributes & HTMLAttributes;
     }
 
     interface GetYourGuideActivityAttributes extends GetYourGuideAttributes {
@@ -18,7 +18,7 @@ declare global {
       "city-id": string;
     }
 
-    interface GetYourGuideAttributes extends Pick<HTMLAttributes<"div">, "lang"> {
+    interface GetYourGuideAttributes extends Pick<HTMLAttributes, "lang"> {
       "partner-id": string;
     }
   }

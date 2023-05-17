@@ -1,0 +1,70 @@
+---
+import GetYourGuide from "../components/GetYourGuide.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>GetYourGuide + Astro Example</title>
+  </head>
+  <body>
+    <h1>
+      <span>GetYourGuide</span>
+      <span>+</span>
+      <span>Astro</span>
+    </h1>
+
+    <h2>City Examples</h2>
+
+    <div class="stack">
+      <GetYourGuide widget="city" cityId="200" />
+      <GetYourGuide widget="city" cityId="17" />
+      <GetYourGuide widget="city" cityId="59" />
+    </div>
+
+    <h2>Activity Examples</h2>
+
+    <h3>Sydney Activities (specified 5 activities)</h3>
+    <div class="stack">
+      <GetYourGuide widget="activity" queryType="search" query="sydney" size="5" />
+    </div>
+
+    <h3>Berlin Activities (default number of activities)</h3>
+    <div class="stack">
+      <GetYourGuide widget="activity" queryType="location" query="17" />
+    </div>
+
+    <style>
+      :root {
+        font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+        line-height: 1.5;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        display: grid;
+        gap: 2rem;
+        margin: 0 auto;
+        max-width: 720px;
+        min-height: 100vh;
+        padding: 2rem;
+        text-align: center;
+      }
+      h1 {
+        display: grid;
+        font-size: 3.2em;
+        line-height: 1.1;
+      }
+      .stack {
+        display: grid;
+        gap: 4rem;
+      }
+    </style>
+  </body>
+</html>

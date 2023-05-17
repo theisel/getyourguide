@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   format:
-    if: github.repository_owner == 'theisel'
+    if: github.event_name == 'pull_request'
     uses: ./.github/workflows/format.yml
     secrets: inherit
     permissions:
