@@ -25,7 +25,7 @@ export default function GetYourGuideCityWidget(props: InputProps) {
     };
   }, [value?.cityId]);
 
-  const widgetAttrs = propsToAttrs<JSX.GetYourGuideCityAttributes>({
+  const widgetAttrs = propsToAttrs({
     partnerId,
     cityId: cityId ?? "",
     lang,

@@ -17,7 +17,7 @@ export default function GetYourGuideActivityWidget(props: InputProps) {
   const { partnerId, lang } = props.schemaType.options ?? {};
   const { size } = props.schemaType.initialValue ?? {};
 
-  const widgetAttrs = propsToAttrs<JSX.GetYourGuideActivityAttributes>({
+  const widgetAttrs = propsToAttrs({
     partnerId,
     lang,
     size,
