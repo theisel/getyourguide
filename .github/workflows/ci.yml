@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   format:
-    if: github.event_name == 'pull_request'
+    if: github.ref_name == 'main'
     uses: ./.github/workflows/format.yml
     secrets: inherit
     permissions:
@@ -25,6 +25,7 @@ jobs:
       ref: ${{ github.head_ref || github.ref }}
 
   release:
+    needs: format
     if: github.event_name == 'push'
     uses: ./.github/workflows/release.yml
     secrets: inherit
