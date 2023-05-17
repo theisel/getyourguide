@@ -1,5 +1,14 @@
 # gyg-wc
 
+## 0.2.1
+
+### Patch Changes
+
+- a9a5f80: Amended `README` and added `docs` directory
+
+  - gyg-wc
+  - sanity-getyourguide-plugin
+
 ## 0.2.0
 
 ### Minor Changes
