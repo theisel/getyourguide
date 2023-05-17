@@ -41,7 +41,7 @@ customElements.define(
       );
       widget.setAttribute("data-gyg-widget", "activities");
       widget.setAttribute("data-gyg-partner-id", this.partnerId);
-      widget.setAttribute("data-gyg-locale-code", this.lang || "en");
+      widget.setAttribute("data-gyg-locale-code", this.lang);
       widget.setAttribute("data-gyg-number-of-items", this._size || this.DEFAULT_SIZE);
 
       if (this._queryType === "tours") {

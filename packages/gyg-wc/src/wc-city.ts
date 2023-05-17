@@ -28,7 +28,7 @@ customElements.define(
       widget.setAttribute("data-gyg-href", "https://widget.getyourguide.com/default/city.frame");
       widget.setAttribute("data-gyg-widget", "city");
       widget.setAttribute("data-gyg-partner-id", this.partnerId);
-      widget.setAttribute("data-gyg-locale-code", this.lang || "en");
+      widget.setAttribute("data-gyg-locale-code", this.lang);
       widget.setAttribute("data-gyg-location-id", this._cityId);
 
       return widget;
