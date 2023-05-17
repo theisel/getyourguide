@@ -1,5 +1,7 @@
 import { GetYourGuide } from "./wc-gyg";
 
+export {};
+
 customElements.define(
   `getyourguide-activity`,
   class GetYourGuideActivity extends GetYourGuide {

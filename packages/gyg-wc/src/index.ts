@@ -1,3 +1,5 @@
+export {};
+
 if (!customElements.get("getyourguide-activity")) {
   import("./wc-activity");
 }

@@ -1,5 +1,7 @@
 import { GetYourGuide } from "./wc-gyg";
 
+export {};
+
 customElements.define(
   `getyourguide-city`,
   class GetYourGuideCity extends GetYourGuide {
