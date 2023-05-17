@@ -10,5 +10,8 @@
   },
   "dependencies": {
     "gyg-wc": "latest"
+  },
+  "devDependencies": {
+    "vite": "^4.3.7"
   }
 }

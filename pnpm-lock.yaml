@@ -49,9 +49,6 @@ importers:
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
-      vite:
-        specifier: ^4.3.7
-        version: 4.3.7(@types/node@20.1.7)
 
   examples/gyg-wc/astro:
     dependencies:
@@ -67,6 +64,10 @@ importers:
       gyg-wc:
         specifier: latest
         version: link:../../../packages/gyg-wc
+    devDependencies:
+      vite:
+        specifier: ^4.3.7
+        version: 4.3.7(@types/node@20.1.7)
 
   examples/gyg-wc/react:
     dependencies:
