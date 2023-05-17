@@ -12,6 +12,6 @@
   },
   "dependencies": {
     "astro": "^2.4.5",
-    "gyg-wc": "latest"
+    "gyg-wc": "workspace:*"
   }
 }
