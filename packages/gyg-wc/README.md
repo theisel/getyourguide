@@ -1,4 +1,6 @@
-# GetYourGuide Web Component
+# GetYourGuide + Web Component
+
+[![npm](https://img.shields.io/npm/v/gyg-wc?style=flat-square)](https://www.npmjs.com/package/gyg-wc)
 
 &nbsp;
 
@@ -32,40 +34,9 @@ $ npm install gyg-wc
 
 &nbsp;
 
-## API
+### Documentation
 
-## \<getyourguide-city\>
-
-**Attributes**
-
-- partner-id `required`
-- city-id `required`
-- lang
-  - Define the language
-
-&nbsp;
-
-## \<getyourguide-activity\>
-
-**Attributes**
-
-- partner-id `required`
-- query-type `required`
-  - Value can be `search` | `location` | `tours`
-- query `required`
-  - For `query-type` `tours` concatenate with a comma (,)
-- exclude
-  - Concatenate with a comma (,)
-- size
-  - Number of items to display; defaults to **3**
-- lang
-  - Define the language
-
-&nbsp;
-
-## Links
-
-[GetYourGuide Partner](https://partner.getyourguide.com/)
+Refer to the `gyg-wc` [docs page](https://github.com/theisel/getyourguide/blob/main/packages/gyg-wc/docs/README.md) for more details.
 
 &nbsp;
 

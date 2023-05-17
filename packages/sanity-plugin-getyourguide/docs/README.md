@@ -1,8 +1,8 @@
-# GetYourGuide + Sanity.io Plugin
-
-[![npm](https://img.shields.io/npm/v/sanity-plugin-getyourguide?style=flat-square)](https://www.npmjs.com/package/sanity-plugin-getyourguide)
+[**`sanity-plugin-getyourguide`**](../README.md)
 
 &nbsp;
+
+# GetYourGuide + Sanity.io Plugin
 
 This is a **Sanity Studio v3** plugin.
 
@@ -40,9 +40,11 @@ export default defineConfig({
 
 &nbsp;
 
-### Documentation
+## Links
 
-Refer to the `sanity-plugin-getyourguide` [docs page](https://github.com/theisel/getyourguide/blob/main/packages/sanity-plugin-getyourguide/docs/README.md) for more details.
+[Sanity.io](https://www.sanity.io/)
+
+[GetYourGuide Partner](https://partner.getyourguide.com/)
 
 &nbsp;
 
