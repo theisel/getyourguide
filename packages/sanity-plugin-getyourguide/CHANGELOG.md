@@ -1,5 +1,17 @@
 # sanity-plugin-getyourguide
 
+## 0.1.5
+
+### Patch Changes
+
+- a9a5f80: Amended `README` and added `docs` directory
+
+  - gyg-wc
+  - sanity-getyourguide-plugin
+
+- Updated dependencies [a9a5f80]
+  - gyg-wc@0.2.1
+
 ## 0.1.4
 
 ### Patch Changes
