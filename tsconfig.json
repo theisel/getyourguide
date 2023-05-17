@@ -1,16 +1,21 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "target": "ESNext",
     "module": "ESNext",
-    "lib": ["ESNext"],
     "moduleResolution": "node",
-    "isolatedModules": true,
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    // Type Checking
+    "allowUnreachableCode": false,
+    "exactOptionalPropertyTypes": true,
+    "strict": true,
+    "strictNullChecks": true,
+    // Emit
+    "noEmit": true,
+    // Interop Constraints
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "skipLibCheck": true,
+    "isolatedModules": true,
     "verbatimModuleSyntax": true
   }
 }
