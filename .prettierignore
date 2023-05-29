@@ -1,6 +1,7 @@
 # Directories
 .changeset/
 .husky/
+.sanity/
 **/gyg-wc/lib/
 
 # Misc
