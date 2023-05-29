@@ -1,9 +1,5 @@
+import { GetYourGuideWidget } from "./wc";
+
 export {};
 
-if (!customElements.get("getyourguide-activity")) {
-  import("./wc-activity");
-}
-
-if (!customElements.get("getyourguide-city")) {
-  import("./wc-city");
-}
+customElements.get("gyg-widget") || customElements.define("gyg-widget", GetYourGuideWidget);

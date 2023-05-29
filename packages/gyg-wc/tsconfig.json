@@ -3,7 +3,7 @@
   "compilerOptions": {
     "noEmit": false,
     "declaration": true,
-    "declarationDir": "lib/@types",
+    "declarationDir": "lib",
     "emitDeclarationOnly": true,
     "lib": ["ESNext", "DOM"]
   },
