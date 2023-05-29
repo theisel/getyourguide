@@ -112,7 +112,7 @@ importers:
         specifier: ^3.11.3
         version: 3.11.3(@types/node@20.2.5)(@types/react@18.2.7)(react-dom@18.2.0)(react@18.2.0)(styled-components@5.3.11)
       sanity-plugin-getyourguide:
-        specifier: ^0.1.5
+        specifier: ^0.2.0
         version: link:../../packages/sanity-plugin-getyourguide
       styled-components:
         specifier: ^5.3.11
