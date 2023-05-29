@@ -1,5 +1,17 @@
 # sanity-plugin-getyourguide
 
+## 0.2.0
+
+### Minor Changes
+
+- 797fe74: - Renamed `getYourGuideActivity` schema to `getYourGuideActivities`; in keeping with **GetYourGuide** terminology
+  - Added `example`
+
+### Patch Changes
+
+- Updated dependencies [797fe74]
+  - gyg-wc@0.3.0
+
 ## 0.1.5
 
 ### Patch Changes
