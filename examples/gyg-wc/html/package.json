@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "gyg-wc": "latest"
+    "gyg-wc": "*"
   },
   "devDependencies": {
     "vite": "^4.3.9"

@@ -53,16 +53,16 @@ importers:
   examples/gyg-wc/astro:
     dependencies:
       astro:
-        specifier: latest
+        specifier: '*'
         version: 2.5.5(@types/node@20.2.5)
       gyg-wc:
-        specifier: latest
+        specifier: '*'
         version: link:../../../packages/gyg-wc
 
   examples/gyg-wc/html:
     dependencies:
       gyg-wc:
-        specifier: latest
+        specifier: '*'
         version: link:../../../packages/gyg-wc
     devDependencies:
       vite:
@@ -72,7 +72,7 @@ importers:
   examples/gyg-wc/react:
     dependencies:
       gyg-wc:
-        specifier: latest
+        specifier: '*'
         version: link:../../../packages/gyg-wc
       react:
         specifier: ^18.2.0
