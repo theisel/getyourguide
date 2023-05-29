@@ -5,9 +5,9 @@ import TypeInput from "./TypeInput";
 import QueryField from "./QueryField";
 
 export default defineType({
-  name: "getYourGuideActivity",
+  name: "getYourGuideActivities",
   type: "object",
-  title: "GetYourGuide: Activity",
+  title: "GetYourGuide: Activities",
   components: {
     input: TypeInput,
   },
@@ -16,7 +16,7 @@ export default defineType({
       subtitle: "title",
     },
     prepare: ({ subtitle }) => ({
-      title: `GetYourGuide: Activity Widget`,
+      title: `GetYourGuide: Activities Widget`,
       subtitle: subtitle || `{Missing "title"}`,
     }),
   },

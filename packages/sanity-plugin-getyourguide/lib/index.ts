@@ -1,18 +1,19 @@
+import type { PluginFactory, SchemaTypeDefinition } from "sanity";
 import { definePlugin } from "sanity";
-import activitySchema from "./schemas/activity/schema";
+import activitiesSchema from "./schemas/activities/schema";
 import citySchema from "./schemas/city/schema";
 
-interface GetYourGuidePluginOptions {
+interface PluginOptions {
   partnerId: string;
   lang?: string;
 }
 
-export const getYourGuide = definePlugin<GetYourGuidePluginOptions>((options) => ({
+export const getYourGuide = definePlugin<PluginOptions>((options) => ({
   name: "getyourguide",
   schema: {
     name: "getyourguide",
     types: [
-      { ...activitySchema, options },
+      { ...activitiesSchema, options },
       { ...citySchema, options },
     ],
   },
