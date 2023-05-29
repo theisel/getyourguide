@@ -1,10 +1,13 @@
-h1 {
-  display: grid;
-  font-size: 3.2em;
+h1,
+h2 {
   line-height: 1.1;
 }
-
-.stack {
+h1 {
   display: grid;
-  gap: 4rem;
+  font-size: 3.2rem;
+}
+h2 {
+  border: 2px solid;
+  font-size: 2rem;
+  padding: 0.5em;
 }
