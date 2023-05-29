@@ -4,10 +4,10 @@ import type { InputProps } from "sanity";
 import type { GetYourGuideCityValue } from "./types";
 
 import { useEffect, useState } from "react";
+import { useFormValue } from "sanity";
 import { Box, Tab, TabList, TabPanel } from "@sanity/ui";
 import { EditIcon, EyeOpenIcon, EyeClosedIcon } from "@sanity/icons";
-import { useFormValue } from "sanity";
-import { propsToAttrs } from "gyg-wc/utils";
+import type { CityAttrs } from "gyg-wc/types";
 
 import "gyg-wc";
 
@@ -25,11 +25,11 @@ export default function GetYourGuideCityWidget(props: InputProps) {
     };
   }, [value?.cityId]);
 
-  const widgetAttrs = propsToAttrs({
-    partnerId,
-    cityId: cityId ?? "",
-    lang,
-  });
+  const widgetAttrs = {
+    widget: "city",
+    "partner-id": partnerId,
+    "city-id": cityId ?? "",
+  } satisfies CityAttrs;
 
   return (
     <>
@@ -58,11 +58,11 @@ export default function GetYourGuideCityWidget(props: InputProps) {
 
       <TabPanel aria-labelledby="preview-tab" hidden={view === "content"} id="preview-panel">
         <Box marginTop={3}>
-          <getyourguide-city {...widgetAttrs}>
+          <gyg-widget {...widgetAttrs} lang={lang}>
             <a href={value?.url} target="_blank" rel="noopener noreferrer">
               {value?.title}
             </a>
-          </getyourguide-city>
+          </gyg-widget>
         </Box>
       </TabPanel>
     </>

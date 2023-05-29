@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>GetYourGuide + Web Components + Vite</title>
+    <title>GetYourGuide + Web Components</title>
     <style>
       html {
         font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -22,14 +22,18 @@
         padding: 2rem;
         text-align: center;
       }
-      h1 {
-        font-size: 3.2em;
+      h1,
+      h2 {
         line-height: 1.1;
-        display: grid;
       }
-      .stack {
+      h1 {
         display: grid;
-        gap: 4rem;
+        font-size: 3.2em;
+      }
+      h2 {
+        border: 2px solid;
+        font-size: 2rem;
+        padding: 0.5em;
       }
     </style>
   </head>
@@ -37,30 +41,28 @@
     <h1>
       <span>GetYourGuide</span>
       <span>+</span>
-      <span>Web Component</span>
-      <span>+</span>
-      <span>Vite</span>
+      <span>HTML</span>
     </h1>
 
     <h2>City Examples</h2>
 
-    <div class="stack">
-      <getyourguide-city city-id="200"></getyourguide-city>
-      <getyourguide-city city-id="17"></getyourguide-city>
-      <getyourguide-city city-id="59"></getyourguide-city>
-    </div>
+    <gyg-widget widget="city" city-id="200" partner-id="0"></gyg-widget>
 
     <h2>Activity Examples</h2>
 
     <h3>Sydney Activities (specified 5 activities)</h3>
-    <div class="stack">
-      <getyourguide-activity query-type="search" query="sydney" size="5"></getyourguide-activity>
-    </div>
+
+    <gyg-widget
+      widget="activities"
+      query-type="search"
+      query="sydney"
+      size="5"
+      partner-id="0"
+    ></gyg-widget>
 
     <h3>Berlin Activities (default number of activities)</h3>
-    <div class="stack">
-      <getyourguide-activity query-type="location" query="17"></getyourguide-activity>
-    </div>
+
+    <gyg-widget widget="activities" query-type="location" query="17" partner-id="0"></gyg-widget>
 
     <script type="module">
       import "gyg-wc";

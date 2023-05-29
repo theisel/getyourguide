@@ -4,7 +4,7 @@ import { useFormValue, type FieldProps } from "sanity";
 import type { GetYourGuideActivityValue } from "./types";
 
 export default function QueryField(props: FieldProps) {
-  const { queryType } = useFormValue(props.path.slice(0, -1)) as GetYourGuideActivityValue;
+  const { queryType } = (useFormValue(props.path.slice(0, -1)) ?? {}) as GetYourGuideActivityValue;
 
   let description = props.description;
 

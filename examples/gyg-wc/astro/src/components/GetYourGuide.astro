@@ -1,43 +1,22 @@
 ---
-import type { CamelCaseKeys } from "../lib/types";
-import { propsToAttrs } from "gyg-wc/utils";
+import type { ActivitiesAttrs, CityAttrs, CamelCaseKeys } from "gyg-wc/types";
 
-type ActivityAttributes = Omit<astroHTML.JSX.GetYourGuideActivityAttributes, "partner-id" | "lang">;
-type CityAttributes = Omit<astroHTML.JSX.GetYourGuideCityAttributes, "partner-id" | "lang">;
-type CheckHasAllProperties<T, U> = keyof U extends keyof T ? T : never;
+type ActivitiesProps = CamelCaseKeys<ActivitiesAttrs>;
+type CityProps = CamelCaseKeys<CityAttrs>;
 
-type Widget<W extends string> = {
-  widget: W;
-};
+export type Props = Omit<ActivitiesProps, "partnerId"> | Omit<CityProps, "partnerId">;
 
-type ActivityProps = Widget<"activity"> &
-  CheckHasAllProperties<
-    {
-      queryType: string;
-      query: string;
-      exclude?: string;
-      size?: string;
-    },
-    CamelCaseKeys<ActivityAttributes>
-  >;
+const props = { ...Astro.props, partnerId: "0" } satisfies ActivitiesProps | CityProps;
 
-type CityProps = Widget<"city"> &
-  CheckHasAllProperties<
-    {
-      cityId: string;
-    },
-    CamelCaseKeys<CityAttributes>
-  >;
-
-export type Props = ActivityProps | CityProps;
-
-const { widget, ...props } = Astro.props;
-const Widget = `getyourguide-${widget}`;
-const attrs = propsToAttrs(props);
+const attrs = (Object.keys(props) as Array<keyof typeof props>).reduce((attrs, prop) => {
+  const key = prop.replace(/([A-Z])/g, "-$1").toLowerCase();
+  attrs[key] = props[prop];
+  return attrs;
+}, {} as Record<string, unknown>) as astroHTML.JSX.IntrinsicElements["gyg-widget"];
 ---
 
-<Widget {...attrs} />
+<gyg-widget {...attrs}></gyg-widget>
 
 <script>
-  import "gyg-wc";
+  import "gyg-wc"; // import GetYourGuide Web Component
 </script>

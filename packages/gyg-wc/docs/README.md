@@ -23,15 +23,15 @@ $ npm install gyg-wc
 ```html
 <!-- import "gyg-wc" module -->
 
-<!-- activity widget example -->
-<getyourguide-activity query-type="search" query="Sydney" size="3" partner-id="...">
+<!-- activities widget example -->
+<gyg-widget widget="activities" query-type="search" query="Sydney" size="3" partner-id="...">
   <a href="https://www.getyourguide.com/sydney-l200/?partner_id=...">Things to do in Sydney</a>
-</getyourguide-activity>
+</gyg-widget>
 
 <!-- city widget example -->
-<getyourguide-city city-id="200" partner-id="...">
+<gyg-widget widget="city" city-id="200" partner-id="...">
   <a href="https://www.getyourguide.com/sydney-l200/?partner_id=...">Things to do in Sydney</a>
-</getyourguide-city>
+</gyg-widget>
 ```
 
 &nbsp;
@@ -57,17 +57,7 @@ $ npm install gyg-wc
 
 ## API
 
-## \<getyourguide-city\>
-
-| Attribute             | Type     | Description             |
-| --------------------- | -------- | ----------------------- |
-| partner-id `required` | `string` | GetYourGuide Partner ID |
-| city-id `required`    | `string` | City/Location ID        |
-| lang                  | `string` | Overrides `<html>` lang |
-
-&nbsp;
-
-## \<getyourguide-activity\>
+## \<gyg-widget widget="activities" ...\>
 
 | Attribute             | Type                 | Description                                    |
 | --------------------- | -------------------- | ---------------------------------------------- |
@@ -77,6 +67,16 @@ $ npm install gyg-wc
 | exclude               | `string`             | Comma (,) separated list                       |
 | size                  | `string` \| `number` | Number of items to display; defaults to **3**  |
 | lang                  | `string`             | Overrides `<html>` lang                        |
+
+&nbsp;
+
+## \<gyg-widget widget="city" ...\>
+
+| Attribute             | Type     | Description             |
+| --------------------- | -------- | ----------------------- |
+| partner-id `required` | `string` | GetYourGuide Partner ID |
+| city-id `required`    | `string` | City/Location ID        |
+| lang                  | `string` | Overrides `<html>` lang |
 
 &nbsp;
 

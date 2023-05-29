@@ -1,13 +1,13 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React from "react";
-import type { InputProps } from "sanity";
+import React, { useEffect } from "react";
+import { set, type InputProps } from "sanity";
 import type { GetYourGuideActivityValue } from "./types";
 
 import { useState } from "react";
+import { useFormValue } from "sanity";
 import { Box, Tab, TabList, TabPanel } from "@sanity/ui";
 import { EditIcon, EyeOpenIcon, EyeClosedIcon } from "@sanity/icons";
-import { useFormValue } from "sanity";
-import { propsToAttrs } from "gyg-wc/utils";
+import type { ActivitiesAttrs } from "gyg-wc/types";
 
 import "gyg-wc";
 
@@ -17,14 +17,24 @@ export default function GetYourGuideActivityWidget(props: InputProps) {
   const { partnerId, lang } = props.schemaType.options ?? {};
   const { size } = props.schemaType.initialValue ?? {};
 
-  const widgetAttrs = propsToAttrs({
-    partnerId,
-    lang,
-    size,
-    queryType: value?.queryType,
-    query: value?.query,
-    exclude: value?.exclude,
-  });
+  useEffect(() => {
+    if (!value || !value.query || "tours" !== value.queryType) return;
+
+    const numTours = value.query.split(",").length;
+
+    if (numTours === size) return;
+
+    props.onChange(set(numTours, ["size"]));
+  }, [size, value?.query, value?.queryType]);
+
+  const widgetAttrs = {
+    widget: "activities",
+    "partner-id": partnerId,
+    "query-type": value?.queryType ?? "",
+    query: value?.query ?? "",
+    exclude: value?.exclude ?? "",
+    size: value?.size ?? size,
+  } satisfies ActivitiesAttrs;
 
   return (
     <>
@@ -53,11 +63,11 @@ export default function GetYourGuideActivityWidget(props: InputProps) {
 
       <TabPanel aria-labelledby="preview-tab" hidden={view !== "preview"} id="preview-panel">
         <Box marginTop={3}>
-          <getyourguide-activity {...widgetAttrs}>
+          <gyg-widget {...widgetAttrs} lang={lang}>
             <a href={value?.url} target="_blank" rel="noopener noreferrer">
               {value?.title}
             </a>
-          </getyourguide-activity>
+          </gyg-widget>
         </Box>
       </TabPanel>
     </>

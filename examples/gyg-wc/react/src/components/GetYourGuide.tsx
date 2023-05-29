@@ -1,38 +1,20 @@
 import React from "react";
-import type { CamelCaseKeys } from "../lib/types";
-import { propsToAttrs } from "gyg-wc/utils";
+import type { ActivitiesAttrs, CityAttrs, CamelCaseKeys } from "gyg-wc/types";
+import "gyg-wc"; // import GetYourGuide Web Component
 
-type ActivityAttributes = Omit<React.JSX.GetYourGuideActivityAttributes, "partner-id" | "lang">;
-type CityAttributes = Omit<React.JSX.GetYourGuideCityAttributes, "partner-id" | "lang">;
-type CheckHasAllProperties<T, U> = keyof U extends keyof T ? T : never;
+type ActivitiesProps = CamelCaseKeys<ActivitiesAttrs>;
+type CityProps = CamelCaseKeys<CityAttrs>;
 
-type Widget<W extends string> = {
-  widget: W;
-};
+export type Props = Omit<ActivitiesProps, "partnerId"> | Omit<CityProps, "partnerId">;
 
-type ActivityProps = Widget<"activity"> &
-  CheckHasAllProperties<
-    {
-      queryType: string;
-      query: string;
-      exclude?: string;
-      size?: string;
-    },
-    CamelCaseKeys<ActivityAttributes>
-  >;
+export default function GetYourGuide(props: Props) {
+  const _props = { ...props, partnerId: "0" } satisfies ActivitiesProps | CityProps;
 
-type CityProps = Widget<"city"> &
-  CheckHasAllProperties<
-    {
-      cityId: string;
-    },
-    CamelCaseKeys<CityAttributes>
-  >;
-export type Props = ActivityProps | CityProps;
+  const attrs = (Object.keys(_props) as Array<keyof typeof _props>).reduce((attrs, prop) => {
+    const key = prop.replace(/([A-Z])/g, "-$1").toLowerCase();
+    attrs[key] = _props[prop];
+    return attrs;
+  }, {} as Record<string, unknown>) as ActivitiesAttrs | CityAttrs;
 
-export default function GetYourGuide({ widget, ...props }: Props) {
-  const Widget = `getyourguide-${widget}`;
-  const attrs = propsToAttrs(props);
-
-  return <Widget {...attrs} />;
+  return <gyg-widget {...attrs}></gyg-widget>;
 }
