@@ -1,5 +1,6 @@
 # GetYourGuide + Web Component
 
+![license](https://img.shields.io/npm/l/gyg-wc?style=flat-square)
 [![npm](https://img.shields.io/npm/v/gyg-wc?style=flat-square)](https://www.npmjs.com/package/gyg-wc)
 
 &nbsp;
