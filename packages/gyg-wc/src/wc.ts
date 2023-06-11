@@ -1,7 +1,9 @@
 export class GetYourGuide extends HTMLElement {
+  static SCRIPT_SRC = "https://widget.getyourguide.com/dist/pa.umd.production.min.js"
+  
   private attrs = {} as Record<"widget" | "partnerId", string>;
   private observer: MutationObserver;
-
+  
   constructor() {
     super();
     this.observer = new MutationObserver(this.onMutation.bind(this));
@@ -98,7 +100,7 @@ export class GetYourGuide extends HTMLElement {
     const script = document.createElement("script");
 
     script.async = true;
-    script.src = "https://widget.getyourguide.com/dist/pa.umd.production.min.js";
+    script.src = GetYourGuide.SCRIPT_SRC;
 
     script.setAttribute("data-gyg-partner-id", this.attrs.partnerId);
 
