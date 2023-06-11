@@ -14,8 +14,6 @@ $ npm install gyg-wc
 # $ yarn add gyg-wc
 ```
 
-&nbsp;
-
 ### Usage
 
 ```html

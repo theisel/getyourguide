@@ -1,7 +1,5 @@
 [**`gyg-wc`**](../README.md)
 
-&nbsp;
-
 # GetYourGuide + Web Component
 
 &nbsp;
@@ -15,8 +13,6 @@ $ npm install gyg-wc
 # $ pnpm add gyg-wc
 # $ yarn add gyg-wc
 ```
-
-&nbsp;
 
 ### Usage
 
