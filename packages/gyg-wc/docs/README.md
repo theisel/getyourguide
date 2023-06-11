@@ -63,7 +63,7 @@ Check the [examples](../../../examples/gyg-wc/) directory for implementation
 | query-type `required` | `string`             | Value can be `search` \| `location` \| `tours` |
 | query `required`      | `string`             | Value relates to `query-type`                  |
 | exclude               | `string`             | Comma (,) separated list                       |
-| size                  | `string` \| `number` | Number of items to display; defaults to **3**  |
+| size                  | `string` \| `number` | Number of items to display; ignored if `query-type` is tours   |
 | lang                  | `string`             | Overrides `<html>` lang                        |
 
 &nbsp;
