@@ -11,15 +11,11 @@ export class GetYourGuide extends HTMLElement {
   }
 
   connectedCallback() {
-    if (!document.head.querySelector(`script[data-gyg-partner-id]`)) {
-      document.head.appendChild(this.createScript());
-    }
-
     this.attrs = {
       widget: this.getAttribute("widget") || "",
       partnerId: this.getAttribute("partner-id") || "",
     };
-
+    
     this.render();
   }
 
@@ -35,6 +31,11 @@ export class GetYourGuide extends HTMLElement {
 
   private render() {
     if (this.hasAttribute("hidden")) return;
+
+    // Append the script
+    if (!document.head.querySelector(`script[data-gyg-partner-id]`)) {
+      document.head.appendChild(this.createScript());
+    }
 
     this.innerHTML = ""; // Clear the content
 
