@@ -32,7 +32,9 @@ $ npm install gyg-wc
 
 &nbsp;
 
-### Examples
+## Examples
+
+Check the [examples](../../../examples/gyg-wc/) directory for implementation
 
 &#9656; HTML
 
