@@ -15,7 +15,7 @@ const attrs = (Object.keys(props) as Array<keyof typeof props>).reduce((attrs, p
 }, {} as Record<string, unknown>) as astroHTML.JSX.IntrinsicElements["gyg-widget"];
 ---
 
-<gyg-widget {...attrs}></gyg-widget>
+<gyg-wc {...attrs}></gyg-wc>
 
 <script>
   import "gyg-wc"; // import GetYourGuide Web Component

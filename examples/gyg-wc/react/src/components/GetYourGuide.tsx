@@ -16,5 +16,5 @@ export default function GetYourGuide(props: Props) {
     return attrs;
   }, {} as Record<string, unknown>) as ActivitiesAttrs | CityAttrs;
 
-  return <gyg-widget {...attrs}></gyg-widget>;
+  return <gyg-wc {...attrs}></gyg-wc>;
 }

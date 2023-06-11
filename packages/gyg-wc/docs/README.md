@@ -24,14 +24,14 @@ $ npm install gyg-wc
 <!-- import "gyg-wc" module -->
 
 <!-- activities widget example -->
-<gyg-widget widget="activities" query-type="search" query="Sydney" size="3" partner-id="...">
+<gyg-wc widget="activities" query-type="search" query="Sydney" size="3" partner-id="...">
   <a href="https://www.getyourguide.com/sydney-l200/?partner_id=...">Things to do in Sydney</a>
-</gyg-widget>
+</gyg-wc>
 
 <!-- city widget example -->
-<gyg-widget widget="city" city-id="200" partner-id="...">
+<gyg-wc widget="city" city-id="200" partner-id="...">
   <a href="https://www.getyourguide.com/sydney-l200/?partner_id=...">Things to do in Sydney</a>
-</gyg-widget>
+</gyg-wc>
 ```
 
 &nbsp;
@@ -57,7 +57,7 @@ $ npm install gyg-wc
 
 ## API
 
-## \<gyg-widget widget="activities" ...\>
+## \<gyg-wc widget="activities" ...\>
 
 | Attribute             | Type                 | Description                                    |
 | --------------------- | -------------------- | ---------------------------------------------- |
@@ -70,7 +70,7 @@ $ npm install gyg-wc
 
 &nbsp;
 
-## \<gyg-widget widget="city" ...\>
+## \<gyg-wc widget="city" ...\>
 
 | Attribute             | Type     | Description             |
 | --------------------- | -------- | ----------------------- |
