@@ -33,6 +33,8 @@ export class GetYourGuideWidget extends HTMLElement {
   }
 
   private render() {
+    if (this.hasAttribute("hidden")) return;
+
     this.innerHTML = ""; // Clear the content
 
     const widget = ((wgt) => {
