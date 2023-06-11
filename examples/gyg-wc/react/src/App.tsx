@@ -14,7 +14,7 @@ function App() {
 
       <GetYourGuide widget="city" cityId="200" />
 
-      <h2>Activity Examples</h2>
+      <h2>Activities Examples</h2>
 
       <h3>Sydney Activities (specified 5 activities)</h3>
 
