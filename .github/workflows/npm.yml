@@ -6,9 +6,9 @@ defaults:
   run:
     shell: bash
 
-env: 
+env:
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-  
+
 jobs:
   npm:
     name: Publish to NPM
@@ -19,7 +19,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.CI_TOKEN }}
-      
+
       - name: Setup PNPM
         uses: pnpm/action-setup@v2
 
@@ -27,8 +27,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          registry-url: 'https://registry.npmjs.org'
-          cache: 'pnpm'
+          registry-url: "https://registry.npmjs.org"
+          cache: "pnpm"
 
       - name: Get Latest Tag
         id: get_latest_tag
