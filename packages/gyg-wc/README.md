@@ -39,7 +39,7 @@ $ npm install gyg-wc
 
 ## Documentation
 
-Refer to the `gyg-wc` [docs page](https://github.com/theisel/getyourguide/blob/main/packages/gyg-wc/docs/README.md) for more details.
+Refer to the [gyg-wc docs](https://github.com/theisel/getyourguide/blob/main/packages/gyg-wc/docs/README.md) page for details.
 
 &nbsp;
 
