@@ -30,7 +30,13 @@ export class GetYourGuide extends HTMLElement {
   }
 
   private render() {
-    if (this.hasAttribute("hidden")) return;
+    if (this.hasAttribute("hidden")) {
+      // Preload the script
+      if (!document.head.querySelector(`link[href="${GetYourGuide.SCRIPT_SRC}"]`)) {
+        document.head.appendChild(this.createPreloadLink());
+      }
+      return;
+    }
 
     // Append the script
     if (!document.head.querySelector(`script[data-gyg-partner-id]`)) {
@@ -95,6 +101,16 @@ export class GetYourGuide extends HTMLElement {
   private withCityWidgetAttributes(widget: HTMLElement) {
     widget.setAttribute("data-gyg-location-id", this.getAttribute("city-id") || "");
     return widget;
+  }
+
+  private createPreloadLink() {
+    const link = document.createElement("link");
+
+    link.rel = "preload";
+    link.as = "script";
+    link.href = GetYourGuide.SCRIPT_SRC;
+
+    return link;
   }
 
   private createScript() {
