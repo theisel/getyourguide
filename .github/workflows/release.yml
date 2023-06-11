@@ -12,33 +12,17 @@ permissions:
 
 jobs:
   release:
-    name: Release
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
+      - name: Release / Pull Request
+        uses: google-github-actions/release-please-action@v3
+        id: release
         with:
-          ref: ${{ inputs.ref }}
+          release-type: node
+          command: manifest
 
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v2
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: "pnpm"
-
-      - name: Install Dependencies
-        run: pnpm install
-
-      - name: Create Release Pull Request
-        uses: changesets/action@v1
-        with:
-          version: npx changeset version
-          publish: npx changeset publish
-          commit: "chore(release): [ci] release"
-          title: "chore(release): [ci] release"
+      - name: Dispatch NPM
+        if: ${{ steps.release.outputs.releases_created }}
+        run: gh workflow run NPM
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ secrets.CI_TOKEN }}
