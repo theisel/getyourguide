@@ -18,7 +18,6 @@ export class GetYourGuideWidget extends HTMLElement {
       partnerId: this.getAttribute("partner-id") || "",
     };
 
-    this.style.display = "block";
     this.render();
   }
 
