@@ -7,6 +7,8 @@
 
 This is an _unofficial_ GetYourGuide package.
 
+This web-component is a light wrapper around the _GetYourGuide_ widget focusing on [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement) and better page performance by loading the script when required and preloading the script if initially [hidden](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden).
+
 &nbsp;
 
 ## Getting started
