@@ -1,4 +1,4 @@
-export class GetYourGuideWidget extends HTMLElement {
+export class GetYourGuide extends HTMLElement {
   private attrs = {} as Record<"widget" | "partnerId", string>;
   private observer: MutationObserver;
 
