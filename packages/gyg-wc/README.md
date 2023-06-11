@@ -5,6 +5,10 @@
 
 &nbsp;
 
+This is an _unofficial_ GetYourGuide package.
+
+&nbsp;
+
 ## Getting started
 
 ### Installation
