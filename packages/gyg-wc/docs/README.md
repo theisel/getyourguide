@@ -57,14 +57,14 @@ Check the [examples](../../../examples/gyg-wc/) directory for implementation
 
 ## \<gyg-wc ...\>
 
-| Attribute             | Type                 | Description                                    |
-| --------------------- | -------------------- | ---------------------------------------------- |
-| partner-id `required` | `string`             | GetYourGuide Partner ID                        |
-| query `required` | `string`             | Value can be `city`  \| `location` \| `search` \| `tours` |
-| value `required`      | `string`             | Value relates to type of `query`; refer to _GetYourGuide_ partner docs                  |
-| exclude               | `string`             | Comma (,) separated list of ids                       |
-| size                  | `string` | Number of items to display; ignored if `query` is tours   |
-| lang                  | `string`             | Overrides `<html>` lang                        |
+| Attribute             | Type     | Description                                                            |
+| --------------------- | -------- | ---------------------------------------------------------------------- |
+| partner-id `required` | `string` | GetYourGuide Partner ID                                                |
+| query `required`      | `string` | Value can be `city` \| `location` \| `search` \| `tours`               |
+| value `required`      | `string` | Value relates to type of `query`; refer to _GetYourGuide_ partner docs |
+| exclude               | `string` | Comma (,) separated list of ids                                        |
+| size                  | `string` | Number of items to display; ignored if `query` is tours                |
+| lang                  | `string` | Overrides `<html>` lang                                                |
 
 &nbsp;
 
