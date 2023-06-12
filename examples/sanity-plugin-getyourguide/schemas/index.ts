@@ -12,12 +12,8 @@ export const schemaTypes = [
         type: "string",
       },
       {
-        name: "getYourGuideCity",
-        type: "getYourGuideCity",
-      },
-      {
-        name: "getYourGuideActivities",
-        type: "getYourGuideActivities",
+        name: "getYourGuideWidget",
+        type: "getYourGuideWidget",
       },
     ],
   },
