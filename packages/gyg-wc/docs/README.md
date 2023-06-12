@@ -20,12 +20,12 @@ $ npm install gyg-wc
 <!-- import "gyg-wc" module -->
 
 <!-- activities widget example -->
-<gyg-wc widget="activities" query-type="search" query="Sydney" size="3" partner-id="...">
+<gyg-wc query="search" value="Sydney" size="3" partner-id="...">
   <a href="https://www.getyourguide.com/sydney-l200/?partner_id=...">Things to do in Sydney</a>
 </gyg-wc>
 
 <!-- city widget example -->
-<gyg-wc widget="city" city-id="200" partner-id="...">
+<gyg-wc query="city" value="200" partner-id="...">
   <a href="https://www.getyourguide.com/sydney-l200/?partner_id=...">Things to do in Sydney</a>
 </gyg-wc>
 ```
@@ -55,26 +55,16 @@ Check the [examples](../../../examples/gyg-wc/) directory for implementation
 
 ## API
 
-## \<gyg-wc widget="activities" ...\>
+## \<gyg-wc ...\>
 
 | Attribute             | Type                 | Description                                    |
 | --------------------- | -------------------- | ---------------------------------------------- |
 | partner-id `required` | `string`             | GetYourGuide Partner ID                        |
-| query-type `required` | `string`             | Value can be `search` \| `location` \| `tours` |
-| query `required`      | `string`             | Value relates to `query-type`                  |
-| exclude               | `string`             | Comma (,) separated list                       |
-| size                  | `string` \| `number` | Number of items to display; ignored if `query-type` is tours   |
+| query `required` | `string`             | Value can be `city`  \| `location` \| `search` \| `tours` |
+| value `required`      | `string`             | Value relates to type of `query`; refer to _GetYourGuide_ partner docs                  |
+| exclude               | `string`             | Comma (,) separated list of ids                       |
+| size                  | `string` | Number of items to display; ignored if `query` is tours   |
 | lang                  | `string`             | Overrides `<html>` lang                        |
-
-&nbsp;
-
-## \<gyg-wc widget="city" ...\>
-
-| Attribute             | Type     | Description             |
-| --------------------- | -------- | ----------------------- |
-| partner-id `required` | `string` | GetYourGuide Partner ID |
-| city-id `required`    | `string` | City/Location ID        |
-| lang                  | `string` | Overrides `<html>` lang |
 
 &nbsp;
 

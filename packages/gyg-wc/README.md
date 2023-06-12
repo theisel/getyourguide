@@ -27,12 +27,12 @@ $ npm install gyg-wc
 <!-- import "gyg-wc" module -->
 
 <!-- activity widget example -->
-<gyg-wc widget="activities" query-type="search" query="Sydney" size="3" partner-id="...">
+<gyg-wc query="search" value="Sydney" size="3" partner-id="...">
   <a href="https://www.getyourguide.com/sydney-l200/?partner_id=...">Things to do in Sydney</a>
 </gyg-wc>
 
 <!-- city widget example -->
-<gyg-wc widget="city" city-id="200" partner-id="...">
+<gyg-wc query="city" value="200" partner-id="...">
   <a href="https://www.getyourguide.com/sydney-l200/?partner_id=...">Things to do in Sydney</a>
 </gyg-wc>
 ```

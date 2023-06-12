@@ -1,7 +1,9 @@
+import type { GetYourGuideAttributes } from "./types";
+
 export class GetYourGuide extends HTMLElement {
   static SCRIPT_SRC = "https://widget.getyourguide.com/dist/pa.umd.production.min.js"
   
-  private attrs = {} as Record<"widget" | "partnerId", string>;
+  private attrs = {} as Pick<GetYourGuideAttributes, "partner-id" | "query">;
   private observer: MutationObserver;
   
   constructor() {
@@ -12,10 +14,10 @@ export class GetYourGuide extends HTMLElement {
 
   connectedCallback() {
     this.attrs = {
-      widget: this.getAttribute("widget") || "",
-      partnerId: this.getAttribute("partner-id") || "",
+      "partner-id": this.getAttribute("partner-id") || "",
+      query: (this.getAttribute("query") || "search") as GetYourGuideAttributes["query"],
     };
-    
+
     this.render();
   }
 
@@ -46,41 +48,40 @@ export class GetYourGuide extends HTMLElement {
     this.innerHTML = ""; // Clear the content
 
     const widget = ((wgt) => {
-      return "activities" === this.attrs.widget
-        ? this.withActivitiesWidgetAttributes(wgt)
-        : this.withCityWidgetAttributes(wgt);
+      return "city" === this.attrs.query
+        ? this.withCityWidgetAttributes(wgt)
+        : this.withActivitiesWidgetAttributes(wgt);
     })(this.createWidget());
 
     this.appendChild(widget);
   }
 
   private createWidget() {
-    const { widget, partnerId } = this.attrs;
-
+    const widget = "city" === this.attrs.query ? "city" : "activities";
     const div = document.createElement("div");
 
     div.setAttribute("data-gyg-href", `https://widget.getyourguide.com/default/${widget}.frame`);
     div.setAttribute("data-gyg-widget", widget);
-    div.setAttribute("data-gyg-partner-id", partnerId);
+    div.setAttribute("data-gyg-partner-id", this.attrs["partner-id"]);
     div.setAttribute("data-gyg-locale-code", this.lang || document.documentElement.lang);
 
     return div;
   }
 
   private withActivitiesWidgetAttributes(widget: HTMLElement) {
-    const queryType = this.getAttribute("query-type") || "";
     const query = this.getAttribute("query") || "";
+    const value = this.getAttribute("value") || "";
 
-    if ("tours" === queryType) {
-      widget.setAttribute("data-gyg-tour-ids", query);
-      widget.setAttribute("data-gyg-number-of-items", query.split(",").length.toString());
+    if ("tours" === query) {
+      widget.setAttribute("data-gyg-tour-ids", value);
+      widget.setAttribute("data-gyg-number-of-items", value.split(",").length.toString());
       return widget;
     }
 
-    if ("location" == queryType) {
-      widget.setAttribute("data-gyg-location-id", query);
+    if ("location" == query) {
+      widget.setAttribute("data-gyg-location-id", value);
     } else {
-      widget.setAttribute("data-gyg-q", query);
+      widget.setAttribute("data-gyg-q", value);
     }
 
     const size = this.getAttribute("size");
@@ -99,7 +100,7 @@ export class GetYourGuide extends HTMLElement {
   }
 
   private withCityWidgetAttributes(widget: HTMLElement) {
-    widget.setAttribute("data-gyg-location-id", this.getAttribute("city-id") || "");
+    widget.setAttribute("data-gyg-location-id", this.getAttribute("value") || "");
     return widget;
   }
 
@@ -119,7 +120,7 @@ export class GetYourGuide extends HTMLElement {
     script.async = true;
     script.src = GetYourGuide.SCRIPT_SRC;
 
-    script.setAttribute("data-gyg-partner-id", this.attrs.partnerId);
+    script.setAttribute("data-gyg-partner-id", this.attrs["partner-id"]);
 
     return script;
   }

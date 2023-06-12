@@ -12,17 +12,17 @@ function App() {
 
       <h2>City Example</h2>
 
-      <GetYourGuide widget="city" cityId="200" />
+      <GetYourGuide query="city" value="200" />
 
       <h2>Activities Examples</h2>
 
       <h3>Sydney Activities (specified 5 activities)</h3>
 
-      <GetYourGuide widget="activities" queryType="search" query="sydney" size="5" />
+      <GetYourGuide query="search" value="sydney" size="5" />
 
       <h3>Berlin Activities (default number of activities)</h3>
 
-      <GetYourGuide widget="activities" queryType="search" query="berlin" />
+      <GetYourGuide query="search" value="berlin" />
     </>
   );
 }

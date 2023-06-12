@@ -1,12 +1,9 @@
 ---
-import type { ActivitiesAttrs, CityAttrs, CamelCaseKeys } from "gyg-wc/types";
+import type { GetYourGuideProps } from "gyg-wc/types";
 
-type ActivitiesProps = CamelCaseKeys<ActivitiesAttrs>;
-type CityProps = CamelCaseKeys<CityAttrs>;
+export type Props = Omit<GetYourGuideProps, "partnerId">;
 
-export type Props = Omit<ActivitiesProps, "partnerId"> | Omit<CityProps, "partnerId">;
-
-const props = { ...Astro.props, partnerId: "0" } satisfies ActivitiesProps | CityProps;
+const props = { ...Astro.props, partnerId: "0" } satisfies GetYourGuideProps;
 
 const attrs = (Object.keys(props) as Array<keyof typeof props>).reduce((attrs, prop) => {
   const key = prop.replace(/([A-Z])/g, "-$1").toLowerCase();
