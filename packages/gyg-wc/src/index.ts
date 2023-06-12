@@ -1,5 +1,5 @@
-import { GetYourGuideWidget } from "./wc";
+import { GetYourGuide } from "./wc";
 
 export {};
 
-customElements.get("gyg-widget") || customElements.define("gyg-widget", GetYourGuideWidget);
+customElements.get("gyg-wc") || customElements.define("gyg-wc", GetYourGuide);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>GetYourGuide + Web Components</title>
@@ -46,23 +46,22 @@
 
     <h2>City Examples</h2>
 
-    <gyg-widget widget="city" city-id="200" partner-id="0"></gyg-widget>
+    <gyg-wc query="city" value="200" partner-id="0"></gyg-wc>
 
-    <h2>Activity Examples</h2>
+    <h2>Activities Examples</h2>
 
     <h3>Sydney Activities (specified 5 activities)</h3>
 
-    <gyg-widget
-      widget="activities"
-      query-type="search"
-      query="sydney"
+    <gyg-wc
+      query="search"
+      value="sydney"
       size="5"
       partner-id="0"
-    ></gyg-widget>
+    ></gyg-wc>
 
     <h3>Berlin Activities (default number of activities)</h3>
 
-    <gyg-widget widget="activities" query-type="location" query="17" partner-id="0"></gyg-widget>
+    <gyg-wc query="location" value="17" partner-id="0"></gyg-wc>
 
     <script type="module">
       import "gyg-wc";

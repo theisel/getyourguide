@@ -1,26 +1,14 @@
-export type ActivitiesAttrs = Attrs<
-  "activities",
-  {
-    "query-type": string;
-    query: string;
-    exclude?: string;
-    size?: string | number;
-  }
->;
-
-export type CityAttrs = Attrs<
-  "city",
-  {
-    "city-id": string;
-  }
->;
-
-type Attrs<W extends string, T extends Record<string, unknown>> = {
-  widget: W;
+export interface GetYourGuideAttributes {
   "partner-id": string;
-} & T;
+  query: "city" | "location" | "search" | "tours";
+  value: string | string[];
+  exclude?: string | string[];
+  size?: number | string;
+}
 
-export type CamelCaseKeys<T> = {
+export type GetYourGuideProps = CamelCaseKeys<GetYourGuideAttributes>;
+
+type CamelCaseKeys<T> = {
   [Key in keyof T as CamelCase<Key>]: T[Key];
 };
 
