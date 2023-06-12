@@ -1,11 +1,11 @@
 import type { GetYourGuideAttributes } from "./types";
 
 export class GetYourGuide extends HTMLElement {
-  static SCRIPT_SRC = "https://widget.getyourguide.com/dist/pa.umd.production.min.js"
-  
+  static SCRIPT_SRC = "https://widget.getyourguide.com/dist/pa.umd.production.min.js";
+
   private attrs = {} as Pick<GetYourGuideAttributes, "partner-id" | "query">;
   private observer: MutationObserver;
-  
+
   constructor() {
     super();
     this.observer = new MutationObserver(this.onMutation.bind(this));
