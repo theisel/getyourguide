@@ -1,7 +1,5 @@
-import type { PluginFactory, SchemaTypeDefinition } from "sanity";
 import { definePlugin } from "sanity";
-import activitiesSchema from "./schemas/activities/schema";
-import citySchema from "./schemas/city/schema";
+import widgetSchema from "./schemas/widget";
 
 interface PluginOptions {
   partnerId: string;
@@ -13,8 +11,7 @@ export const getYourGuide = definePlugin<PluginOptions>((options) => ({
   schema: {
     name: "getyourguide",
     types: [
-      { ...activitiesSchema, options },
-      { ...citySchema, options },
+      { ...widgetSchema, options },
     ],
   },
 }));
