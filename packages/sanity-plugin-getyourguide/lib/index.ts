@@ -7,9 +7,9 @@ interface PluginOptions {
 }
 
 export const getYourGuide = definePlugin<PluginOptions>((options) => ({
-  name: "getyourguide",
+  name: "getYourGuide",
   schema: {
-    name: "getyourguide",
+    name: "getYourGuide",
     types: [
       { ...widgetSchema, options },
     ],
