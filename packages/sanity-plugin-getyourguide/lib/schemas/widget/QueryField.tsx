@@ -11,8 +11,8 @@ export default function QueryField(props: FieldProps) {
       description = `Enter city id`;
       break;
     case "location":
-        description = `Enter location/city id`;
-        break;
+      description = `Enter location/city id`;
+      break;
     case "search":
       description = `Enter search terms, a city, or geographical coordinates`;
       break;
