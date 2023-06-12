@@ -1,13 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React from "react";
 import { defineType } from "sanity";
-import TypeInput from "./TypeInput";
 import QueryField from "./QueryField";
+import TypeInput from "./TypeInput";
 
 export default defineType({
-  name: "getYourGuideActivities",
+  name: "getYourGuideWidget",
   type: "object",
-  title: "GetYourGuide: Activities",
+  title: "GetYourGuide Widget",
   components: {
     input: TypeInput,
   },
@@ -16,31 +15,29 @@ export default defineType({
       subtitle: "title",
     },
     prepare: ({ subtitle }) => ({
-      title: `GetYourGuide: Activities Widget`,
+      title: `GetYourGuide Widget`,
       subtitle: subtitle || `{Missing "title"}`,
     }),
   },
-  initialValue: {
-    queryType: "search",
-    size: 3,
-  },
   fields: [
-    {
-      name: "queryType",
-      type: "string",
-      title: "Query Type",
-      options: {
-        list: [
-          { title: "Search", value: "search" },
-          { title: "Tours", value: "tours" },
-          { title: "Location Id", value: "location" },
-        ],
-      },
-    },
     {
       name: "query",
       type: "string",
       title: "Query",
+      initialValue: "search",
+      options: {
+        list: [
+          { title: "City", value: "city" },
+          { title: "Location", value: "location" },
+          { title: "Search", value: "search" },
+          { title: "Tours", value: "tours" },
+        ],
+      },
+    },
+    {
+      name: "value",
+      type: "string",
+      title: "Value",
       components: {
         field: QueryField,
       },
@@ -48,11 +45,11 @@ export default defineType({
     },
     {
       name: "exclude",
-      type: "string",
+      type: "array",
       title: "Exclude",
       description: "A comma (,) separated list of activity id's",
       of: [{ type: "string" }],
-      hidden: ({ parent }) => parent?.queryType === "tours",
+      hidden: ({ parent }) => ["city", "tours"].includes(parent?.query),
       options: {
         layout: "tags",
       },
@@ -61,8 +58,8 @@ export default defineType({
       name: "size",
       type: "number",
       title: "Size",
-      description: "Number of acitivites to display",
-      validation: (Rule) => Rule.required(),
+      description: "Number of items to display",
+      hidden: ({ parent }) => ["city", "tours"].includes(parent?.query),
     },
     {
       name: "title",
@@ -87,6 +84,7 @@ export default defineType({
           </a>
         </>
       ),
+      initialValue: "https://www.getyourguide.com/",
       validation: (Rule) => Rule.required(),
     },
   ],
