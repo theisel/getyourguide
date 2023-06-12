@@ -6,7 +6,7 @@ export {};
 declare global {
   namespace astroHTML.JSX {
     interface IntrinsicElements {
-      "gyg-widget": ActivitiesAttrs | CityAttrs;
+      "gyg-wc": ActivitiesAttrs | CityAttrs;
     }
   }
 }

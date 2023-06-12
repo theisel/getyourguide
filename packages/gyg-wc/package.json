@@ -34,7 +34,8 @@
     "react.d.ts"
   ],
   "scripts": {
-    "build": "npx esbuild ./src/index.ts --bundle --minify --format=esm --outdir=lib --tsconfig=tsconfig.json && npx tsc",
+    "clean-lib": "rm -rf ./lib",
+    "build": "pnpm clean-lib && npx esbuild ./src/index.ts --bundle --minify --format=esm --outdir=lib --tsconfig=tsconfig.json && npx tsc",
     "prepublishOnly": "pnpm build"
   },
   "devDependencies": {
