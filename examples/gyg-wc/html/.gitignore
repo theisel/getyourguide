@@ -1,0 +1,8 @@
+# build output
+dist/
+
+# logs
+pnpm-debug.log*
+
+# macOS-specific files
+.DS_Store
