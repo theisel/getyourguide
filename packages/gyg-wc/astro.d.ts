@@ -1,12 +1,12 @@
-/// <reference types="astro" />
-import type { ActivitiesAttrs, CityAttrs } from "./lib/types";
+/// <reference types="astro/client" />
+import type { GetYourGuideAttributes } from "./lib/types";
 
 export {};
 
 declare global {
   namespace astroHTML.JSX {
     interface IntrinsicElements {
-      "gyg-wc": ActivitiesAttrs | CityAttrs;
+      "gyg-wc": GetYourGuideAttributes & astroHTML.JSX.HTMLAttributes;
     }
   }
 }
