@@ -2,19 +2,17 @@
 
 ## [0.4.0](https://github.com/theisel/getyourguide/compare/gyg-wc@0.3.0...gyg-wc@0.4.0) (2023-06-13)
 
-
 ### ⚠ BREAKING CHANGES
 
-* gyg-wc ([#14](https://github.com/theisel/getyourguide/issues/14))
+- gyg-wc ([#14](https://github.com/theisel/getyourguide/issues/14))
 
 ### Bug Fixes
 
-* **gyg-wc:** typings ([#18](https://github.com/theisel/getyourguide/issues/18)) ([0f8c189](https://github.com/theisel/getyourguide/commit/0f8c1894dfc6cb255c90a4999afa7dec7367bd83))
-
+- **gyg-wc:** typings ([#18](https://github.com/theisel/getyourguide/issues/18)) ([0f8c189](https://github.com/theisel/getyourguide/commit/0f8c1894dfc6cb255c90a4999afa7dec7367bd83))
 
 ### Code Refactoring
 
-* gyg-wc ([#14](https://github.com/theisel/getyourguide/issues/14)) ([c8cb32e](https://github.com/theisel/getyourguide/commit/c8cb32e516bd1953d9e9a91b1c685dcb1d4abbc6))
+- gyg-wc ([#14](https://github.com/theisel/getyourguide/issues/14)) ([c8cb32e](https://github.com/theisel/getyourguide/commit/c8cb32e516bd1953d9e9a91b1c685dcb1d4abbc6))
 
 ## 0.3.0
 
