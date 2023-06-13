@@ -20,6 +20,8 @@ jobs:
         with:
           release-type: node
           command: manifest
+          bootstrap-sha: 557d004bab2f5c9b95500b398a9a9d0518ef3e06
+          last-release-sha: 557d004bab2f5c9b95500b398a9a9d0518ef3e06
 
       - name: Dispatch NPM
         if: ${{ steps.release.outputs.releases_created }}
