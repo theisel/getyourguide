@@ -28,6 +28,6 @@ jobs:
 
       - name: Dispatch NPM
         if: ${{ steps.release.outputs.releases_created }}
-        run: gh workflow run NPM
+        run: gh workflow run NPM -f tag=${{ steps.release.outputs.tag_name }}
         env:
           GH_TOKEN: ${{ secrets.CI_TOKEN }}
