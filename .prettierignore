@@ -6,4 +6,5 @@
 **/gyg-wc/lib/
 
 # Misc
+.release-please-manifest.json
 pnpm-lock.yaml
