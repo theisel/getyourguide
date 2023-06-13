@@ -42,4 +42,7 @@ jobs:
 
       - name: Publish
         run: |
-          pnpm publish --tag ${{ steps.get_latest_tag.outputs.tag }} --dry-run
+          git reset --hard ${{ steps.get_latest_tag.outputs.tag }}
+          pkg_name=$(cut -d '@' -f1 <<< '${{ steps.get_latest_tag.outputs.tag }}')
+          pnpm install
+          pnpm publish --filter $pkg_name --otp=${{ secrets.NPM_TOKEN }} --no-git-checks
