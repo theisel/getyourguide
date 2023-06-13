@@ -6,7 +6,8 @@ export {};
 declare global {
   namespace React.JSX {
     interface IntrinsicElements {
-      "gyg-wc": GetYourGuideAttributes & React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
+      "gyg-wc": GetYourGuideAttributes &
+        React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
     }
   }
 }
