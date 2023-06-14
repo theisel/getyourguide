@@ -1,12 +1,37 @@
 export interface GetYourGuideAttributes {
   "partner-id": string;
-  query: "city" | "location" | "search" | "tours";
-  value: string | string[];
+  widget: "activities" | "availability" | "city";
+  query: string | string[];
+  lang?: string;
+}
+
+export type GetYourGuideProps = CamelCaseKeys<GetYourGuideAttributes>;
+
+export interface GetYourGuideActivitiesAttributes extends GetYourGuideAttributes {
+  widget: "activities";
+  type: "location" | "search" | "tours";
   exclude?: string | string[];
   size?: number | string;
 }
 
-export type GetYourGuideProps = CamelCaseKeys<GetYourGuideAttributes>;
+export type GetYourGuideActivitiesProps = CamelCaseKeys<GetYourGuideActivitiesAttributes>;
+
+export interface GetYourGuideAvailabilityAttributes extends GetYourGuideAttributes {
+  widget: "availability";
+  theme?: "dark" | "light";
+  layout?: "horizontal" | "vertical";
+  currency?: string;
+  campaign?: string;
+}
+
+export type GetYourGuideAvailabilityProps = CamelCaseKeys<GetYourGuideAvailabilityAttributes>;
+
+export interface GetYourGuideCityAttributes extends GetYourGuideAttributes {
+  widget: "city";
+  query: string;
+}
+
+export type GetYourGuideCityProps = CamelCaseKeys<GetYourGuideCityAttributes>;
 
 type CamelCaseKeys<T> = {
   [Key in keyof T as CamelCase<Key>]: T[Key];

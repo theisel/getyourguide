@@ -1,10 +1,12 @@
-import type { GetYourGuideAttributes } from "./types";
-
 export class GetYourGuide extends HTMLElement {
   static SCRIPT_SRC = "https://widget.getyourguide.com/dist/pa.umd.production.min.js";
 
-  private attrs = {} as Pick<GetYourGuideAttributes, "partner-id" | "query">;
+  private partnerId = "";
   private observer: MutationObserver;
+
+  protected get widget() {
+    return this.getAttribute("widget") || "";
+  }
 
   constructor() {
     super();
@@ -13,11 +15,7 @@ export class GetYourGuide extends HTMLElement {
   }
 
   connectedCallback() {
-    this.attrs = {
-      "partner-id": this.getAttribute("partner-id") || "",
-      query: (this.getAttribute("query") || "search") as GetYourGuideAttributes["query"],
-    };
-
+    this.partnerId = this.getAttribute("partner-id") || this.partnerId;
     this.render();
   }
 
@@ -47,61 +45,48 @@ export class GetYourGuide extends HTMLElement {
 
     this.innerHTML = ""; // Clear the content
 
-    const widget = ((wgt) => {
-      return "city" === this.attrs.query
-        ? this.withCityWidgetAttributes(wgt)
-        : this.withActivitiesWidgetAttributes(wgt);
-    })(this.createWidget());
-
-    this.appendChild(widget);
+    this.appendChild(this.createWidget());
   }
 
-  private createWidget() {
-    const widget = "city" === this.attrs.query ? "city" : "activities";
+  protected createWidget(): HTMLElement {
+    let widgetInst: GetYourGuide | undefined;
+
+    switch (this.widget) {
+      case "activities":
+        widgetInst = new GetYourGuideActivities();
+        break;
+      case "availability":
+        widgetInst = new GetYourGuideAvailability();
+        break;
+      case "city":
+        widgetInst = new GetYourGuideCity();
+        break;
+    }
+
+    if (widgetInst) {
+      for (let i = 0; i < this.attributes.length; i++) {
+        const { name, value } = this.attributes[i];
+        if (name === "widget") continue;
+        widgetInst.setAttribute(name, value);
+      }
+      return widgetInst;
+    }
+
+    throw Error(`Unknown widget: ${this.widget}`);
+  }
+
+  protected createBaseWidget() {
     const div = document.createElement("div");
 
-    div.setAttribute("data-gyg-href", `https://widget.getyourguide.com/default/${widget}.frame`);
-    div.setAttribute("data-gyg-widget", widget);
-    div.setAttribute("data-gyg-partner-id", this.attrs["partner-id"]);
+    div.setAttribute(
+      "data-gyg-href",
+      `https://widget.getyourguide.com/default/${this.widget}.frame`
+    );
+    div.setAttribute("data-gyg-widget", this.widget);
+    div.setAttribute("data-gyg-partner-id", this.partnerId);
     div.setAttribute("data-gyg-locale-code", this.lang || document.documentElement.lang);
 
     return div;
-  }
-
-  private withActivitiesWidgetAttributes(widget: HTMLElement) {
-    const query = this.getAttribute("query") || "";
-    const value = this.getAttribute("value") || "";
-
-    if ("tours" === query) {
-      widget.setAttribute("data-gyg-tour-ids", value);
-      widget.setAttribute("data-gyg-number-of-items", value.split(",").length.toString());
-      return widget;
-    }
-
-    if ("location" == query) {
-      widget.setAttribute("data-gyg-location-id", value);
-    } else {
-      widget.setAttribute("data-gyg-q", value);
-    }
-
-    const size = this.getAttribute("size");
-
-    if (size) {
-      widget.setAttribute("data-gyg-number-of-items", size);
-    }
-
-    const exclude = this.getAttribute("exclude");
-
-    if (exclude) {
-      widget.setAttribute("data-gyg-excluded-tour-ids", exclude);
-    }
-
-    return widget;
-  }
-
-  private withCityWidgetAttributes(widget: HTMLElement) {
-    widget.setAttribute("data-gyg-location-id", this.getAttribute("value") || "");
-    return widget;
   }
 
   private createPreloadLink() {
@@ -120,8 +105,91 @@ export class GetYourGuide extends HTMLElement {
     script.async = true;
     script.src = GetYourGuide.SCRIPT_SRC;
 
-    script.setAttribute("data-gyg-partner-id", this.attrs["partner-id"]);
+    script.setAttribute("data-gyg-partner-id", this.partnerId);
 
     return script;
+  }
+}
+
+export class GetYourGuideActivities extends GetYourGuide {
+  protected get widget() {
+    return "activities";
+  }
+
+  protected createWidget() {
+    const widget = this.createBaseWidget();
+    const type = this.getAttribute("type") || "";
+    const query = this.getAttribute("query") || "";
+
+    switch (type) {
+      case "tours":
+        widget.setAttribute("data-gyg-tour-ids", query);
+        widget.setAttribute("data-gyg-number-of-items", query.split(",").length.toString());
+        return widget;
+      case "location":
+        widget.setAttribute("data-gyg-location-id", query);
+        break;
+      default:
+        widget.setAttribute("data-gyg-q", query);
+    }
+
+    const size = this.getAttribute("size");
+
+    if (size) {
+      widget.setAttribute("data-gyg-number-of-items", size);
+    }
+
+    const exclude = this.getAttribute("exclude");
+
+    if (exclude) {
+      widget.setAttribute("data-gyg-excluded-tour-ids", exclude);
+    }
+
+    return widget;
+  }
+}
+
+export class GetYourGuideAvailability extends GetYourGuide {
+  protected get widget() {
+    return "availability";
+  }
+
+  protected createWidget() {
+    const widget = this.createBaseWidget();
+    const theme = this.getAttribute("theme") || this.systemTheme;
+    const layout = this.getAttribute("layout") || "horizontal";
+    const currency = this.getAttribute("currency") || "";
+    const campaign = this.getAttribute("campaign") || "";
+
+    widget.setAttribute("data-gyg-theme", theme);
+    widget.setAttribute("data-gyg-variant", layout);
+    widget.setAttribute("data-gyg-tour-id", this.getAttribute("query") || "");
+
+    if (currency) {
+      widget.setAttribute("data-gyg-currency", currency);
+    }
+
+    if (campaign) {
+      widget.setAttribute("data-gyg-cmp", campaign);
+    }
+
+    return widget;
+  }
+
+  private get systemTheme() {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+}
+
+export class GetYourGuideCity extends GetYourGuide {
+  protected get widget() {
+    return "city";
+  }
+
+  protected createWidget() {
+    const widget = this.createBaseWidget();
+    widget.setAttribute("data-gyg-location-id", this.getAttribute("query") || "");
+
+    return widget;
   }
 }

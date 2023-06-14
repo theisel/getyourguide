@@ -44,19 +44,34 @@
       <span>HTML</span>
     </h1>
 
-    <h2>City Examples</h2>
+    <section>
+      <h2>City</h2>
+      <gyg-city query="200" partner-id="0"></gyg-city>
+    </section>
 
-    <gyg-wc query="city" value="200" partner-id="0"></gyg-wc>
+    <section>
+      <h2>Availability</h2>
+      <gyg-availability query="391726" partner-id="0"></gyg-availability>
+    </section>
 
-    <h2>Activities Examples</h2>
+    <section>
+      <h2>Availability (Vertical Layout)</h2>
+      <gyg-availability query="391726" layout="vertical" partner-id="0"></gyg-availability>
+    </section>
 
-    <h3>Sydney Activities (specified 5 activities)</h3>
+    <section>
+      <h2>Activities</h2>
 
-    <gyg-wc query="search" value="sydney" size="5" partner-id="0"></gyg-wc>
+      <section>
+        <h3>Sydney Activities (with 5 activities)</h3>
+        <gyg-activities type="search" query="sydney" size="5" partner-id="0"></gyg-activities>
+      </section>
 
-    <h3>Berlin Activities (default number of activities)</h3>
-
-    <gyg-wc query="location" value="17" partner-id="0"></gyg-wc>
+      <section>
+        <h3>Berlin Activities (default number of activities)</h3>
+        <gyg-activities type="location" query="17" partner-id="0"></gyg-activities>
+      </section>
+    </section>
 
     <script type="module">
       import "gyg-wc";
