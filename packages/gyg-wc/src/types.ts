@@ -10,7 +10,7 @@ export type GetYourGuideProps = CamelCaseKeys<GetYourGuideAttributes>;
 export interface GetYourGuideActivitiesAttributes extends GetYourGuideAttributes {
   widget: "activities";
   type: "location" | "search" | "tours";
-  exclude?: string | string[];
+  exclude?: string;
   size?: number | string;
 }
 
