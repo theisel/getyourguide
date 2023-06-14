@@ -1,7 +1,7 @@
 export interface GetYourGuideAttributes {
   "partner-id": string;
   widget: "activities" | "availability" | "city";
-  query: string | string[];
+  query: string;
   lang?: string;
 }
 
@@ -10,7 +10,7 @@ export type GetYourGuideProps = CamelCaseKeys<GetYourGuideAttributes>;
 export interface GetYourGuideActivitiesAttributes extends GetYourGuideAttributes {
   widget: "activities";
   type: "location" | "search" | "tours";
-  exclude?: string | string[];
+  exclude?: string;
   size?: number | string;
 }
 
