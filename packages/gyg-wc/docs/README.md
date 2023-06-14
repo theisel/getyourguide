@@ -14,22 +14,6 @@ $ npm install gyg-wc
 # $ yarn add gyg-wc
 ```
 
-### Usage
-
-```html
-<!-- import "gyg-wc" module -->
-
-<!-- activities widget example -->
-<gyg-wc query="search" value="Sydney" size="3" partner-id="...">
-  <a href="https://www.getyourguide.com/sydney-l200/?partner_id=...">Things to do in Sydney</a>
-</gyg-wc>
-
-<!-- city widget example -->
-<gyg-wc query="city" value="200" partner-id="...">
-  <a href="https://www.getyourguide.com/sydney-l200/?partner_id=...">Things to do in Sydney</a>
-</gyg-wc>
-```
-
 &nbsp;
 
 ## Examples
@@ -55,16 +39,42 @@ Check the [examples](../../../examples/gyg-wc/) directory for implementation
 
 ## API
 
-## \<gyg-wc ...\>
+### \<gyg-wc ...\>
 
-| Attribute             | Type     | Description                                                            |
-| --------------------- | -------- | ---------------------------------------------------------------------- |
-| partner-id `required` | `string` | GetYourGuide Partner ID                                                |
-| query `required`      | `string` | Value can be `city` \| `location` \| `search` \| `tours`               |
-| value `required`      | `string` | Value relates to type of `query`; refer to _GetYourGuide_ partner docs |
-| exclude               | `string` | Comma (,) separated list of ids                                        |
-| size                  | `string` | Number of items to display; ignored if `query` is tours                |
-| lang                  | `string` | Overrides `<html>` lang                                                |
+| Attribute             | Type     | Description                                                                                              |
+| --------------------- | -------- | -------------------------------------------------------------------------------------------------------- |
+| partner-id `required` | `string` | GetYourGuide Partner ID                                                                                  |
+| widget `required`     | `string` | Only required when using `<gyg-wc ...>` component. Value can be `activities` \| `availability` \| `city` |
+| query `required`      | `string` | Value relates to the widget. This may be a search string, location id, tour id etc.                      |
+| lang                  | `string` | Overrides `<html>` lang                                                                                  |
+
+### \<gyg-activities ...\>
+
+Extends [gyg-wc](#gyg-wc)
+
+| Attribute       | Type     | Description                                    |
+| --------------- | -------- | ---------------------------------------------- |
+| type `required` | `string` | Value can be `location` \| `search` \| `tours` |
+| exclude         | `string` | Comma (,) separated list of ids                |
+| size            | `string` | Number of items to display                     |
+
+### \<gyg-availability ...\>
+
+Extends [gyg-wc](#gyg-wc)
+
+| Attribute | Type     | Description                                         |
+| --------- | -------- | --------------------------------------------------- |
+| theme     | `string` | Value can be `dark` \| `light`; default `system`    |
+| layout    | `string` | Value can be `horizontal` \| `vertical`; default "" |
+| currency  | `string` | Check GetYourGuide Partner dashboard for options    |
+| campaign  | `string` | Associate this widget with a campaign               |
+
+### \<gyg-city ...\>
+
+Extends [gyg-wc](#gyg-wc)
+
+| Attribute | Type | Description |
+| --------- | ---- | ----------- |
 
 &nbsp;
 
