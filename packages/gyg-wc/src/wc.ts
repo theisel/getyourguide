@@ -156,10 +156,13 @@ export class GetYourGuideAvailability extends GetYourGuide {
 
   protected createWidget() {
     const widget = this.createBaseWidget();
-    const theme = this.getAttribute("theme") || this.systemTheme;
     const layout = this.getAttribute("layout") || "horizontal";
     const currency = this.getAttribute("currency") || "";
     const campaign = this.getAttribute("campaign") || "";
+
+    const theme = ((theme) => ("system" === theme ? this.systemTheme : theme))(
+      this.getAttribute("theme") || "system"
+    );
 
     widget.setAttribute("data-gyg-theme", theme);
     widget.setAttribute("data-gyg-variant", layout);
