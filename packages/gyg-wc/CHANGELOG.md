@@ -2,14 +2,13 @@
 
 ## [0.5.0](https://github.com/theisel/getyourguide/compare/gyg-wc@0.4.0...gyg-wc@0.5.0) (2023-06-14)
 
-
 ### ⚠ BREAKING CHANGES
 
-* **gyg wc:** api ([#29](https://github.com/theisel/getyourguide/issues/29))
+- **gyg wc:** api ([#29](https://github.com/theisel/getyourguide/issues/29))
 
 ### Code Refactoring
 
-* **gyg wc:** api ([#29](https://github.com/theisel/getyourguide/issues/29)) ([57f0e8d](https://github.com/theisel/getyourguide/commit/57f0e8dffdf8ee968db073dc37043755db2f4a01))
+- **gyg wc:** api ([#29](https://github.com/theisel/getyourguide/issues/29)) ([57f0e8d](https://github.com/theisel/getyourguide/commit/57f0e8dffdf8ee968db073dc37043755db2f4a01))
 
 ## [0.4.0](https://github.com/theisel/getyourguide/compare/gyg-wc@0.3.0...gyg-wc@0.4.0) (2023-06-13)
 
