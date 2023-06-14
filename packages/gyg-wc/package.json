@@ -1,7 +1,7 @@
 {
   "name": "gyg-wc",
   "description": "GetYourGuide Web Component",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "author": "Tom Theisel <tom.theisel@gmail.com>",
   "license": "ISC",
   "keywords": [
