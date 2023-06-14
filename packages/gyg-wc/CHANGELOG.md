@@ -2,15 +2,13 @@
 
 ## [0.6.0](https://github.com/theisel/getyourguide/compare/gyg-wc@0.5.0...gyg-wc@0.6.0) (2023-06-14)
 
-
 ### Features
 
-* **gyg-wc/availability:** add theme `system` ([#32](https://github.com/theisel/getyourguide/issues/32)) ([52670d8](https://github.com/theisel/getyourguide/commit/52670d8dd0f601e510864e60e3d4db3c258c99c2))
-
+- **gyg-wc/availability:** add theme `system` ([#32](https://github.com/theisel/getyourguide/issues/32)) ([52670d8](https://github.com/theisel/getyourguide/commit/52670d8dd0f601e510864e60e3d4db3c258c99c2))
 
 ### Bug Fixes
 
-* **gyg wc:** types ([#31](https://github.com/theisel/getyourguide/issues/31)) ([3cfe70b](https://github.com/theisel/getyourguide/commit/3cfe70be6f1e3a5074b3bd9d2695d8f2bde3fd49))
+- **gyg wc:** types ([#31](https://github.com/theisel/getyourguide/issues/31)) ([3cfe70b](https://github.com/theisel/getyourguide/commit/3cfe70be6f1e3a5074b3bd9d2695d8f2bde3fd49))
 
 ## [0.5.0](https://github.com/theisel/getyourguide/compare/gyg-wc@0.4.0...gyg-wc@0.5.0) (2023-06-14)
 
