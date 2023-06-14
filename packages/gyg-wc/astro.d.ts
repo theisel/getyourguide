@@ -6,7 +6,7 @@ export {};
 declare global {
   namespace astroHTML.JSX {
     interface IntrinsicElements {
-      "gyg-wc": GetYourGuideAttributes & astroHTML.JSX.HTMLAttributes;
+      "gyg-wc": GetYourGuideAttributes & IntrinsicAttributes;
     }
   }
 }
