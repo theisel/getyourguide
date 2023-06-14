@@ -17,19 +17,19 @@ import GetYourGuide from "../components/GetYourGuide.astro";
       <span>Astro</span>
     </h1>
 
-    <h2>City Example</h2>
+    <h2>City</h2>
+    <GetYourGuide widget="city" query="200" />
 
-    <GetYourGuide query="city" value="200" />
+    <h2>Availability</h2>
+    <GetYourGuide widget="availability" query="391726" partner-id="0" />
 
-    <h2>Activities Examples</h2>
+    <h2>Activities</h2>
 
     <h3>Sydney Activities (specified 5 activities)</h3>
-
-    <GetYourGuide query="search" value="sydney" size="5" />
+    <GetYourGuide widget="activities" type="search" query="sydney" size="5" />
 
     <h3>Berlin Activities (default number of activities)</h3>
-
-    <GetYourGuide query="search" value="berlin" />
+    <GetYourGuide widget="activities" type="search" query="berlin" />
 
     <style>
       :root {
