@@ -1,7 +1,7 @@
 export interface GetYourGuideAttributes {
   "partner-id": string;
   widget: "activities" | "availability" | "city";
-  query: string | string[];
+  query: string;
   lang?: string;
 }
 
