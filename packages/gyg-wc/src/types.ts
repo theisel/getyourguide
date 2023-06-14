@@ -18,7 +18,7 @@ export type GetYourGuideActivitiesProps = CamelCaseKeys<GetYourGuideActivitiesAt
 
 export interface GetYourGuideAvailabilityAttributes extends GetYourGuideAttributes {
   widget: "availability";
-  theme?: "dark" | "light";
+  theme?: "dark" | "light" | "system";
   layout?: "horizontal" | "vertical";
   currency?: string;
   campaign?: string;
