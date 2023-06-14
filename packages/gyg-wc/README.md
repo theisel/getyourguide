@@ -7,7 +7,7 @@
 
 This is an _unofficial_ GetYourGuide package.
 
-This web-component is a light wrapper around the _GetYourGuide_ widget focusing on [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement), simple API, and better page performance.
+The web-components are a light wrapper around the _GetYourGuide_ widget focusing on [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement), simple API, and better page performance.
 
 &nbsp;
 
@@ -21,19 +21,63 @@ $ npm install gyg-wc
 # $ yarn add gyg-wc
 ```
 
-### Usage
+### Usage / Examples
+
+#### Activities
 
 ```html
 <!-- import "gyg-wc" module -->
 
-<!-- activity widget example -->
-<gyg-wc query="search" value="Sydney" size="3" partner-id="...">
-  <a href="https://www.getyourguide.com/sydney-l200/?partner_id=...">Things to do in Sydney</a>
-</gyg-wc>
+<gyg-activities type="search" query="{query}" partner-id="{partner_id}">
+  <a href="https://www.getyourguide.com/{path_to_activities}/?partner_id={partner_id}">
+    Things to do in ...
+  </a>
+</gyg-activities>
 
-<!-- city widget example -->
-<gyg-wc query="city" value="200" partner-id="...">
-  <a href="https://www.getyourguide.com/sydney-l200/?partner_id=...">Things to do in Sydney</a>
+<!-- alternative -->
+<gyg-wc widget="activities" type="search" query="{query}" partner-id="{partner_id}">
+  <a href="https://www.getyourguide.com/{path_to_activities}/?partner_id={partner_id}">
+    Things to do in ...
+  </a>
+</gyg-wc>
+```
+
+#### Availability
+
+```html
+<!-- import "gyg-wc" module -->
+
+<!-- availability widget example -->
+<gyg-availability query="{tour_id}" partner-id="{partner_id}">
+  <a href="https://www.getyourguide.com/{path_to_tour}/?partner_id={partner_id}">
+    Check availability for ...
+  </a>
+</gyg-availability>
+
+<!-- alternative -->
+<gyg-wc widget="availability" query="{tour_id}" partner-id="{partner_id}">
+  <a href="https://www.getyourguide.com/{path_to_tour}/?partner_id={partner_id}">
+    Check availability for ...
+  </a>
+</gyg-wc>
+```
+
+#### City Widget
+
+```html
+<!-- import "gyg-wc" module -->
+
+<gyg-city query="{city_id}" partner-id="{partner_id}">
+  <a href="https://www.getyourguide.com/{city_slug}/?partner_id={partner_id}">
+    Things to do in ...
+  </a>
+</gyg-city>
+
+<!-- alternative: city widget example -->
+<gyg-wc widget="city" query="{city_id}" partner-id="{partner_id}">
+  <a href="https://www.getyourguide.com/{city_slug}/?partner_id={partner_id}">
+    Things to do in ...
+  </a>
 </gyg-wc>
 ```
 
