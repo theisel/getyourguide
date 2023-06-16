@@ -1,10 +1,10 @@
 /// <reference types="astro/client" />
 
 import type {
-  GetYourGuideAttributes,
-  GetYourGuideActivitiesAttributes,
   GetYourGuideAvailabilityAttributes,
-  GetYourGuideCityAttributes,
+  GetYourGuideLocationAttributes,
+  GetYourGuideSearchAttributes,
+  GetYourGuideToursAttributes,
 } from "./lib/types";
 
 export {};
@@ -12,14 +12,15 @@ export {};
 declare global {
   namespace astroHTML.JSX {
     interface IntrinsicElements {
-      "gyg-activities": GetYourGuideActivitiesAttributes & IntrinsicAttributes;
       "gyg-availability": GetYourGuideAvailabilityAttributes & IntrinsicAttributes;
-      "gyg-city": GetYourGuideCityAttributes & IntrinsicAttributes;
+      "gyg-location": GetYourGuideLocationAttributes & IntrinsicAttributes;
+      "gyg-search": GetYourGuideSearchAttributes & IntrinsicAttributes;
+      "gyg-tours": GetYourGuideToursAttributes & IntrinsicAttributes;
       "gyg-wc":
-        | IntrinsicElements["gyg-activities"]
         | IntrinsicElements["gyg-availability"]
-        | IntrinsicElements["gyg-city"]
-        | (GetYourGuideAttributes & IntrinsicAttributes);
+        | IntrinsicElements["gyg-location"]
+        | IntrinsicElements["gyg-search"]
+        | IntrinsicElements["gyg-tours"];
     }
   }
 }
