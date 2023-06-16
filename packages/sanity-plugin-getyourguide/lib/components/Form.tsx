@@ -1,38 +1,20 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React, { useEffect } from "react";
-import { set, type InputProps } from "sanity";
 import { useState } from "react";
-import { useFormValue } from "sanity";
+import { useFormValue, type InputProps } from "sanity";
 import { Box, Tab, TabList, TabPanel } from "@sanity/ui";
 import { EditIcon, EyeOpenIcon, EyeClosedIcon } from "@sanity/icons";
-import type { GetYourGuideAttributes } from "gyg-wc/types";
-import type { GetYourGuideValue } from "./types";
 
 import "gyg-wc";
 
-export default function GetYourGuideActivityWidget(props: InputProps) {
+type FormValue = React.JSX.IntrinsicElements["gyg-wc"] & {
+  _type: string;
+  title: string;
+  url: string;
+};
+
+export function GetYourGuideForm(props: InputProps) {
   const [view, setView] = useState<"content" | "preview">("content");
-  const value = useFormValue(props.path) as GetYourGuideValue | undefined;
+  const { _type, title, ...widgetAttrs } = (useFormValue(props.path) ?? {}) as FormValue;
   const { partnerId, lang } = props.schemaType.options ?? {};
-
-  useEffect(() => {
-    if (!value?.value || "tours" !== value.query) return;
-
-    const numTours = value.query.split(",").length;
-
-    if (numTours === value.size) return;
-
-    props.onChange(set(numTours, ["size"]));
-  }, [value?.query, value?.value, value?.size]);
-
-  const widgetAttrs = {
-    "partner-id": partnerId,
-    query: (value?.query ?? "") as GetYourGuideAttributes["query"],
-    value: value?.value ?? "",
-    exclude: value?.exclude ?? "",
-    size: value?.size ?? "",
-    hidden: view !== "preview" ? "hidden" : undefined,
-  } satisfies GetYourGuideAttributes & { hidden?: string | undefined };
 
   return (
     <>
@@ -61,9 +43,9 @@ export default function GetYourGuideActivityWidget(props: InputProps) {
 
       <TabPanel aria-labelledby="preview-tab" hidden={view !== "preview"} id="preview-panel">
         <Box marginTop={3}>
-          <gyg-wc {...widgetAttrs} lang={lang}>
-            <a href={value?.url} target="_blank" rel="noopener noreferrer">
-              {value?.title}
+          <gyg-wc {...widgetAttrs} partner-id={partnerId} lang={lang}>
+            <a href={widgetAttrs.url} target="_blank" rel="noopener noreferrer">
+              {title}
             </a>
           </gyg-wc>
         </Box>
