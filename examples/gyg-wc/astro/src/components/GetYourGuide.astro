@@ -1,39 +1,34 @@
 ---
 import type {
-  GetYourGuideActivitiesProps,
   GetYourGuideAvailabilityProps,
-  GetYourGuideCityProps,
+  GetYourGuideLocationProps,
+  GetYourGuideSearchProps,
+  GetYourGuideToursProps,
   GetYourGuideProps,
 } from "gyg-wc/types";
 
-type P0 = Omit<GetYourGuideProps, "partnerId">;
-type P1 = Omit<GetYourGuideActivitiesProps, "partnerId">;
-type P2 = Omit<GetYourGuideAvailabilityProps, "partnerId">;
-type P3 = Omit<GetYourGuideCityProps, "partnerId">;
+type P0 = Omit<GetYourGuideAvailabilityProps, "partnerId">;
+type P1 = Omit<GetYourGuideLocationProps, "partnerId">;
+type P2 = Omit<GetYourGuideSearchProps, "partnerId">;
+type P3 = Omit<GetYourGuideToursProps, "partnerId">;
 
 export type Props = P0 | P1 | P2 | P3;
 
 const props = { ...Astro.props, partnerId: "0" } satisfies GetYourGuideProps;
 
-const { widget, ...attrs } = (Object.keys(props) as Array<keyof typeof props>).reduce(
-  (attrs, prop) => {
-    const key = prop
-      .toString()
-      .replace(/([A-Z])/g, "-$1")
-      .toLowerCase();
+const attrs = (Object.keys(props) as Array<keyof typeof props>).reduce((attrs, prop) => {
+  const key = prop
+    .toString()
+    .replace(/([A-Z])/g, "-$1")
+    .toLowerCase();
 
-    attrs[key] = props[prop];
+  attrs[key] = props[prop];
 
-    return attrs;
-  },
-  {} as Record<string, unknown>
-) as unknown as astroHTML.JSX.IntrinsicElements["gyg-wc"];
-
-const Widget = `gyg-${widget}`;
+  return attrs;
+}, {} as Record<string, unknown>) as unknown as astroHTML.JSX.IntrinsicElements["gyg-wc"];
 ---
 
-<!-- Alternatively use <gyg-wc {...attrs} widget={widget}></gyg-wc> -->
-<Widget {...attrs} />
+<gyg-wc {...attrs}></gyg-wc>
 
 <script>
   import "gyg-wc"; // import GetYourGuide Web Component
