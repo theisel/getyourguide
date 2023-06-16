@@ -1,6 +1,7 @@
 import { definePlugin } from "sanity";
 import availabilitySchema from "./schemas/availability";
 import locationSchema from "./schemas/location";
+import searchSchema from "./schemas/search";
 
 interface PluginOptions {
   partnerId: string;
@@ -14,6 +15,7 @@ export const getYourGuide = definePlugin<PluginOptions>((options) => ({
     types: [
       { ...availabilitySchema, options },
       { ...locationSchema, options },
+      { ...searchSchema, options },
     ],
   },
 }));
