@@ -74,9 +74,13 @@ export class GetYourGuide extends HTMLElement {
 
     this.innerHTML = ""; // Clear the content
 
-    "GYG-WC" === this.tagName
-      ? this.appendChild(this.widget.provideWidgetElement())
-      : this.appendChild(this.provideWidgetElement());
+    try {
+      "GYG-WC" === this.tagName
+        ? this.appendChild(this.widget.provideWidgetElement())
+        : this.appendChild(this.provideWidgetElement());
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   protected provideWidgetElement() {
