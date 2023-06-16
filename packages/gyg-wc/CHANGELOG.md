@@ -2,16 +2,15 @@
 
 ## [0.7.0](https://github.com/theisel/getyourguide/compare/gyg-wc@0.6.0...gyg-wc@0.7.0) (2023-06-16)
 
-
 ### ⚠ BREAKING CHANGES
 
-* **sanity-plugin:** rewrite ([#38](https://github.com/theisel/getyourguide/issues/38))
-* **gyg-wc:** rewrite ([#35](https://github.com/theisel/getyourguide/issues/35))
+- **sanity-plugin:** rewrite ([#38](https://github.com/theisel/getyourguide/issues/38))
+- **gyg-wc:** rewrite ([#35](https://github.com/theisel/getyourguide/issues/35))
 
 ### Code Refactoring
 
-* **gyg-wc:** rewrite ([#35](https://github.com/theisel/getyourguide/issues/35)) ([13ae1e8](https://github.com/theisel/getyourguide/commit/13ae1e84ba6278736c46d185a11fb64c2160ff16))
-* **sanity-plugin:** rewrite ([#38](https://github.com/theisel/getyourguide/issues/38)) ([1d25732](https://github.com/theisel/getyourguide/commit/1d25732de575db70426abe807b3494b077faf24c))
+- **gyg-wc:** rewrite ([#35](https://github.com/theisel/getyourguide/issues/35)) ([13ae1e8](https://github.com/theisel/getyourguide/commit/13ae1e84ba6278736c46d185a11fb64c2160ff16))
+- **sanity-plugin:** rewrite ([#38](https://github.com/theisel/getyourguide/issues/38)) ([1d25732](https://github.com/theisel/getyourguide/commit/1d25732de575db70426abe807b3494b077faf24c))
 
 ## [0.6.0](https://github.com/theisel/getyourguide/compare/gyg-wc@0.5.0...gyg-wc@0.6.0) (2023-06-14)
 
