@@ -11,27 +11,78 @@ function App() {
       </h1>
 
       <section>
-        <h2>City Example</h2>
-        <GetYourGuide widget="city" query="200" />
+        <h2>Location</h2>
+
+        <article>
+          <h3>Location (city)</h3>
+          <GetYourGuide url="https://www.getyourguide.com/sydney-l200/">
+            <a href="https://www.getyourguide.com/sydney-l200/?partner_id=0">
+              Things to do in Sydney
+            </a>
+          </GetYourGuide>
+        </article>
+
+        <article>
+          <h3>Location (country)</h3>
+          <GetYourGuide url="https://www.getyourguide.com/australia-l168949/">
+            <a href="https://www.getyourguide.com/australia-l168949/?partner_id=0">
+              Things to do in Australia
+            </a>
+          </GetYourGuide>
+        </article>
+
+        <article>
+          <h3>Location (with 5 items)</h3>
+          <GetYourGuide url="https://www.getyourguide.com/australia-l168949/" size="5">
+            <a href="https://www.getyourguide.com/australia-l168949/?partner_id=0">
+              Things to do in Australia
+            </a>
+          </GetYourGuide>
+        </article>
       </section>
 
       <section>
         <h2>Availability</h2>
-        <GetYourGuide widget="availability" query="391726" partner-id="0" />
+
+        <article>
+          <h3>Availability (default)</h3>
+          <GetYourGuide url="https://www.getyourguide.com/sydney-l200/1-hour-premium-harbor-cruise-vivid-sydney-festival-t150386">
+            <a href="https://www.getyourguide.com/sydney-l200/1-hour-premium-harbor-cruise-vivid-sydney-festival-t150386?partner_id=0">
+              Vivid Light Festival Sydney Harbour Cruise
+            </a>
+          </GetYourGuide>
+        </article>
+
+        <article>
+          <h3>Availability (`vertical` layout)</h3>
+          <GetYourGuide
+            url="https://www.getyourguide.com/sydney-l200/1-hour-premium-harbor-cruise-vivid-sydney-festival-t150386"
+            layout="vertical"
+          >
+            <a href="https://www.getyourguide.com/sydney-l200/1-hour-premium-harbor-cruise-vivid-sydney-festival-t150386?partner_id=0">
+              Vivid Light Festival Sydney Harbour Cruise
+            </a>
+          </GetYourGuide>
+        </article>
       </section>
 
       <section>
-        <h2>Activities Examples</h2>
+        <h2>Search</h2>
+        <GetYourGuide query="sydney" size="5">
+          <a href="https://www.getyourguide.com/?partner_id=0">Things to do in Sydney</a>
+        </GetYourGuide>
+      </section>
 
-        <section>
-          <h3>Sydney Activities (specified 5 activities)</h3>
-          <GetYourGuide widget="activities" type="search" query="sydney" size="5" />
-        </section>
-
-        <section>
-          <h3>Berlin Activities (default number of activities)</h3>
-          <GetYourGuide widget="activities" type="search" query="berlin" />
-        </section>
+      <section>
+        <h2>Tours</h2>
+        <GetYourGuide
+          urls={[
+            "https://www.getyourguide.com/sydney-l200/1-hour-premium-harbor-cruise-vivid-sydney-festival-t150386",
+            "https://www.getyourguide.com/sydney-l200/sydney-harbour-cruise-taronga-zoo-and-sky-safari-t72927",
+          ]}
+        >
+          <a href="https://www.getyourguide.com/sydney-l200/?partner_id=0">Book a Sydney tour</a>
+        </GetYourGuide>
       </section>
     </article>
   );
