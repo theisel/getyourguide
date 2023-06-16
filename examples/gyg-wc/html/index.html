@@ -45,32 +45,87 @@
     </h1>
 
     <section>
-      <h2>City</h2>
-      <gyg-city query="200" partner-id="0"></gyg-city>
+      <h2>Location</h2>
+
+      <article>
+        <h3>Location (city)</h3>
+        <gyg-wc url="https://www.getyourguide.com/sydney-l200/" partner-id="0">
+          <a href="https://www.getyourguide.com/sydney-l200/?partner_id=0"
+            >Things to do in Sydney</a
+          >
+        </gyg-wc>
+      </article>
+
+      <article>
+        <h3>Location (country)</h3>
+        <gyg-wc url="https://www.getyourguide.com/australia-l168949/" partner-id="0">
+          <a href="https://www.getyourguide.com/australia-l168949/?partner_id=0"
+            >Things to do in Australia</a
+          >
+        </gyg-wc>
+      </article>
+
+      <article>
+        <h3>Location (with 5 items)</h3>
+        <gyg-wc url="https://www.getyourguide.com/australia-l168949/" size="5" partner-id="0">
+          <a href="https://www.getyourguide.com/australia-l168949/?partner_id=0"
+            >Things to do in Australia</a
+          >
+        </gyg-wc>
+      </article>
     </section>
 
     <section>
       <h2>Availability</h2>
-      <gyg-availability query="391726" partner-id="0"></gyg-availability>
+
+      <article>
+        <h3>Availability (default)</h3>
+        <gyg-wc
+          url="https://www.getyourguide.com/sydney-l200/1-hour-premium-harbor-cruise-vivid-sydney-festival-t150386"
+          partner-id="0"
+        >
+          <a
+            href="https://www.getyourguide.com/sydney-l200/1-hour-premium-harbor-cruise-vivid-sydney-festival-t150386?partner_id=0"
+          >
+            Vivid Light Festival Sydney Harbour Cruise
+          </a>
+        </gyg-wc>
+      </article>
+
+      <article>
+        <h3>Availability (`vertical` layout)</h3>
+        <gyg-wc
+          url="https://www.getyourguide.com/sydney-l200/1-hour-premium-harbor-cruise-vivid-sydney-festival-t150386"
+          layout="vertical"
+          partner-id="0"
+        >
+          <a
+            href="https://www.getyourguide.com/sydney-l200/1-hour-premium-harbor-cruise-vivid-sydney-festival-t150386?partner_id=0"
+          >
+            Vivid Light Festival Sydney Harbour Cruise
+          </a>
+        </gyg-wc>
+      </article>
     </section>
 
     <section>
-      <h2>Availability (Vertical Layout)</h2>
-      <gyg-availability query="391726" layout="vertical" partner-id="0"></gyg-availability>
+      <h2>Search</h2>
+      <gyg-wc query="sydney" size="5" partner-id="0">
+        <a href="https://www.getyourguide.com/?partner_id=0">Things to do in Sydney</a>
+      </gyg-wc>
     </section>
 
     <section>
-      <h2>Activities</h2>
-
-      <section>
-        <h3>Sydney Activities (with 5 activities)</h3>
-        <gyg-activities type="search" query="sydney" size="5" partner-id="0"></gyg-activities>
-      </section>
-
-      <section>
-        <h3>Berlin Activities (default number of activities)</h3>
-        <gyg-activities type="location" query="17" partner-id="0"></gyg-activities>
-      </section>
+      <h2>Tours</h2>
+      <gyg-wc
+        urls="
+          https://www.getyourguide.com/sydney-l200/1-hour-premium-harbor-cruise-vivid-sydney-festival-t150386,
+          https://www.getyourguide.com/sydney-l200/sydney-harbour-cruise-taronga-zoo-and-sky-safari-t72927
+        "
+        partner-id="0"
+      >
+        <a href="https://www.getyourguide.com/sydney-l200/?partner_id=0">Book a Sydney tour</a>
+      </gyg-wc>
     </section>
 
     <script type="module">
