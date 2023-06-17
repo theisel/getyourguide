@@ -137,7 +137,7 @@ export class GetYourGuideAvailability extends GetYourGuide {
   }
 
   private get systemTheme() {
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    return globalThis.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   }
 
   protected provideWidgetElement() {
