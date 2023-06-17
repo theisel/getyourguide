@@ -1,5 +1,18 @@
 # sanity-plugin-getyourguide
 
+## [0.3.0](https://github.com/theisel/getyourguide/compare/sanity-plugin-getyourguide@0.2.0...sanity-plugin-getyourguide@0.3.0) (2023-06-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* **sanity-plugin:** rewrite ([#38](https://github.com/theisel/getyourguide/issues/38))
+* sanity-plugin ([#15](https://github.com/theisel/getyourguide/issues/15))
+
+### Code Refactoring
+
+* sanity-plugin ([#15](https://github.com/theisel/getyourguide/issues/15)) ([48676c0](https://github.com/theisel/getyourguide/commit/48676c0d7744b7a8d43200628525f7200d16ed34))
+* **sanity-plugin:** rewrite ([#38](https://github.com/theisel/getyourguide/issues/38)) ([1d25732](https://github.com/theisel/getyourguide/commit/1d25732de575db70426abe807b3494b077faf24c))
+
 ## 0.2.0
 
 ### Minor Changes
