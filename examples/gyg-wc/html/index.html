@@ -49,7 +49,7 @@
 
       <article>
         <h3>Location (city)</h3>
-        <gyg-wc url="https://www.getyourguide.com/sydney-l200/" partner-id="0">
+        <gyg-wc url="https://www.getyourguide.com/sydney-l200/">
           <a href="https://www.getyourguide.com/sydney-l200/?partner_id=0"
             >Things to do in Sydney</a
           >
@@ -58,7 +58,7 @@
 
       <article>
         <h3>Location (country)</h3>
-        <gyg-wc url="https://www.getyourguide.com/australia-l168949/" partner-id="0">
+        <gyg-wc url="https://www.getyourguide.com/australia-l168949/">
           <a href="https://www.getyourguide.com/australia-l168949/?partner_id=0"
             >Things to do in Australia</a
           >
@@ -67,7 +67,7 @@
 
       <article>
         <h3>Location (with 5 items)</h3>
-        <gyg-wc url="https://www.getyourguide.com/australia-l168949/" size="5" partner-id="0">
+        <gyg-wc url="https://www.getyourguide.com/australia-l168949/" size="5">
           <a href="https://www.getyourguide.com/australia-l168949/?partner_id=0"
             >Things to do in Australia</a
           >
@@ -82,7 +82,6 @@
         <h3>Availability (default)</h3>
         <gyg-wc
           url="https://www.getyourguide.com/sydney-l200/1-hour-premium-harbor-cruise-vivid-sydney-festival-t150386"
-          partner-id="0"
         >
           <a
             href="https://www.getyourguide.com/sydney-l200/1-hour-premium-harbor-cruise-vivid-sydney-festival-t150386?partner_id=0"
@@ -97,7 +96,6 @@
         <gyg-wc
           url="https://www.getyourguide.com/sydney-l200/1-hour-premium-harbor-cruise-vivid-sydney-festival-t150386"
           layout="vertical"
-          partner-id="0"
         >
           <a
             href="https://www.getyourguide.com/sydney-l200/1-hour-premium-harbor-cruise-vivid-sydney-festival-t150386?partner_id=0"
@@ -110,7 +108,7 @@
 
     <section>
       <h2>Search</h2>
-      <gyg-wc query="sydney" size="5" partner-id="0">
+      <gyg-wc query="sydney" size="5">
         <a href="https://www.getyourguide.com/?partner_id=0">Things to do in Sydney</a>
       </gyg-wc>
     </section>
@@ -122,12 +120,14 @@
           https://www.getyourguide.com/sydney-l200/1-hour-premium-harbor-cruise-vivid-sydney-festival-t150386,
           https://www.getyourguide.com/sydney-l200/sydney-harbour-cruise-taronga-zoo-and-sky-safari-t72927
         "
-        partner-id="0"
       >
         <a href="https://www.getyourguide.com/sydney-l200/?partner_id=0">Book a Sydney tour</a>
       </gyg-wc>
     </section>
 
+    <script>
+      globalThis.GYG_PARTNER_ID = import.meta.env.VITE_GYG_PARTNER_ID;
+    </script>
     <script type="module">
       import "gyg-wc";
     </script>
