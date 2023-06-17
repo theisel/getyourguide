@@ -2,6 +2,10 @@
 
 # GetYourGuide + Web Component
 
+This is an _unofficial_ GetYourGuide package.
+
+This web-component is a light wrapper around the _GetYourGuide_ widget focusing on [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement), simple API, and better page performance (ie. lazy loading).
+
 &nbsp;
 
 ## Getting started
@@ -41,40 +45,55 @@ Check the [examples](../../../examples/gyg-wc/) directory for implementation
 
 ### \<gyg-wc ...\>
 
-| Attribute             | Type     | Description                                                                                              |
-| --------------------- | -------- | -------------------------------------------------------------------------------------------------------- |
-| partner-id `required` | `string` | GetYourGuide Partner ID                                                                                  |
-| widget `required`     | `string` | Only required when using `<gyg-wc ...>` component. Value can be `activities` \| `availability` \| `city` |
-| query `required`      | `string` | Value relates to the widget. This may be a search string, location id, tour id etc.                      |
-| lang                  | `string` | Overrides `<html>` lang                                                                                  |
+| Attribute  | Type     | Description                                     |
+| ---------- | -------- | ----------------------------------------------- |
+| partner-id | `string` | `required` if global `GYG_PARTNER_ID` isn't set |
+| lang       | `string` | Overrides `<html>` lang                         |
 
-### \<gyg-activities ...\>
+### Activities
 
-Extends [gyg-wc](#gyg-wc)
+&#9656; _extends_ [gyg-wc](#gyg-wc)
 
-| Attribute       | Type     | Description                                    |
-| --------------- | -------- | ---------------------------------------------- |
-| type `required` | `string` | Value can be `location` \| `search` \| `tours` |
-| exclude         | `string` | Comma (,) separated list of ids                |
-| size            | `string` | Number of items to display                     |
+| Attribute       | Type     | Description                                                          |
+| --------------- | -------- | -------------------------------------------------------------------- |
+| url `required`  | `string` | Location URL                                                         |
+| size `required` | `string` | Number of items. Leave blank `size=""` to let GetYourGuide to decide |
 
-### \<gyg-availability ...\>
+### Availability
 
-Extends [gyg-wc](#gyg-wc)
+&#9656; _extends_ [gyg-wc](#gyg-wc)
 
-| Attribute | Type     | Description                                         |
-| --------- | -------- | --------------------------------------------------- |
-| theme     | `string` | Value can be `dark` \| `light`; default `system`    |
-| layout    | `string` | Value can be `horizontal` \| `vertical`; default "" |
-| currency  | `string` | Check GetYourGuide Partner dashboard for options    |
-| campaign  | `string` | Associate this widget with a campaign               |
+| Attribute      | Type     | Description                                      |
+| -------------- | -------- | ------------------------------------------------ |
+| url `required` | `string` | Tour URL                                         |
+| campaign       | `string` | Associate this widget with a campaign            |
+| theme          | `string` | `dark` \| `light`; default `system`              |
+| layout         | `string` | `horizontal` \| `vertical`; default `horizontal` |
+| currency       | `string` | Check GetYourGuide Partner dashboard for options |
 
-### \<gyg-city ...\>
+### Location
 
-Extends [gyg-wc](#gyg-wc)
+&#9656; _extends_ [gyg-wc](#gyg-wc)
 
-| Attribute | Type | Description |
-| --------- | ---- | ----------- |
+| Attribute      | Type     | Description  |
+| -------------- | -------- | ------------ |
+| url `required` | `string` | Location URL |
+
+### Search
+
+&#9656; _extends_ [gyg-wc](#gyg-wc)
+
+| Attribute        | Type     | Description  |
+| ---------------- | -------- | ------------ |
+| query `required` | `string` | Location URL |
+
+### Tours
+
+&#9656; _extends_ [gyg-wc](#gyg-wc)
+
+| Attribute       | Type     | Description                                           |
+| --------------- | -------- | ----------------------------------------------------- |
+| urls `required` | `string` | Array of tour URL's or comma (,) separated tour URL's |
 
 &nbsp;
 
