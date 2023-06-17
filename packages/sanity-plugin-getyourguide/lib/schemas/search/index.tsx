@@ -1,5 +1,6 @@
 import { defineType, type ObjectInputProps } from "sanity";
 import { GetYourGuideForm } from "../../components/Form";
+import { parseUrl } from "gyg-wc/utils";
 
 export default defineType({
   name: "getYourGuideSearch",
@@ -50,6 +51,11 @@ export default defineType({
       of: [{ type: "url" }],
       title: "Exlude Tours",
       description: "URLs to exclude from search results",
+      validation: (Rule) =>
+        Rule.optional().custom((input: string[]) => {
+          const isValid = input.every((url) => parseUrl(url)?.isTourUrl);
+          return isValid || "Check URLs";
+        }),
     },
   ],
 });
