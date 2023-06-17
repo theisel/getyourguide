@@ -2,11 +2,10 @@
 
 ## [0.7.1](https://github.com/theisel/getyourguide/compare/gyg-wc@0.7.0...gyg-wc@0.7.1) (2023-06-17)
 
-
 ### Bug Fixes
 
-* **gyg-wc:** set `partnerId` to widget ([#40](https://github.com/theisel/getyourguide/issues/40)) ([322c5a5](https://github.com/theisel/getyourguide/commit/322c5a577b497ca63754afa5f0c696a28de185eb))
-* **gyg-wc:** use `globalThis` ([#41](https://github.com/theisel/getyourguide/issues/41)) ([b5372fc](https://github.com/theisel/getyourguide/commit/b5372fced1fe7ec9c3fb0cffadc4ce4389d41837))
+- **gyg-wc:** set `partnerId` to widget ([#40](https://github.com/theisel/getyourguide/issues/40)) ([322c5a5](https://github.com/theisel/getyourguide/commit/322c5a577b497ca63754afa5f0c696a28de185eb))
+- **gyg-wc:** use `globalThis` ([#41](https://github.com/theisel/getyourguide/issues/41)) ([b5372fc](https://github.com/theisel/getyourguide/commit/b5372fced1fe7ec9c3fb0cffadc4ce4389d41837))
 
 ## [0.7.0](https://github.com/theisel/getyourguide/compare/gyg-wc@0.6.0...gyg-wc@0.7.0) (2023-06-16)
 
