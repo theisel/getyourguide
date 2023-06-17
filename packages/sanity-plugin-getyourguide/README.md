@@ -42,7 +42,7 @@ export default defineConfig({
 
 ### Documentation
 
-Refer to the `sanity-plugin-getyourguide` [docs page](https://github.com/theisel/getyourguide/blob/main/packages/sanity-plugin-getyourguide/docs/README.md) for more details.
+Refer to [docs page](https://github.com/theisel/getyourguide/blob/main/packages/sanity-plugin-getyourguide/docs/README.md) for more details.
 
 &nbsp;
 
