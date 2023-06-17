@@ -34,6 +34,8 @@ export class GetYourGuide extends HTMLElement {
       widgetInst.setAttribute(name, value);
     }
 
+    widgetInst.partnerId = this.partnerId; // Set the partnerId
+
     return widgetInst;
   }
 
