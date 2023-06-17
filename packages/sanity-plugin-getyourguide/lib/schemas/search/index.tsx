@@ -50,7 +50,6 @@ export default defineType({
       of: [{ type: "url" }],
       title: "Exlude Tours",
       description: "URLs to exclude from search results",
-      validation: (Rule) => Rule.required(),
     },
   ],
 });
