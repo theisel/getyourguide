@@ -2,10 +2,9 @@
 
 ## [0.8.0](https://github.com/theisel/getyourguide/compare/gyg-wc@0.7.1...gyg-wc@0.8.0) (2023-06-17)
 
-
 ### Features
 
-* **gyg-wc:** global GYG_PARTNER_ID ([#44](https://github.com/theisel/getyourguide/issues/44)) ([ecb4566](https://github.com/theisel/getyourguide/commit/ecb456645d3b58e4b0631f5104e826c44408dc5e))
+- **gyg-wc:** global GYG_PARTNER_ID ([#44](https://github.com/theisel/getyourguide/issues/44)) ([ecb4566](https://github.com/theisel/getyourguide/commit/ecb456645d3b58e4b0631f5104e826c44408dc5e))
 
 ## [0.7.1](https://github.com/theisel/getyourguide/compare/gyg-wc@0.7.0...gyg-wc@0.7.1) (2023-06-17)
 
