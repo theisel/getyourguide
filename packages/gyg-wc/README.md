@@ -7,7 +7,7 @@
 
 This is an _unofficial_ GetYourGuide package.
 
-The web-components are a light wrapper around the _GetYourGuide_ widget focusing on [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement), simple API, and better page performance.
+This web-component is a light wrapper around the _GetYourGuide_ widget focusing on [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement), simple API, and better page performance (ie. lazy loading).
 
 &nbsp;
 
@@ -23,61 +23,54 @@ $ npm install gyg-wc
 
 ### Usage / Examples
 
+```html
+<!-- index.html - using Vite -->
+<script>
+  // ✅ Remove the need to add `partner-id` attribute to each web component
+  globalThis.GYG_PARTNER_ID = import.meta.env.VITE_GYG_PARTNER_ID;
+</script>
+<script type="module">
+  import "gyg-wc";
+</script>
+```
+
 #### Activities
 
 ```html
-<!-- import "gyg-wc" module -->
-
-<gyg-activities type="search" query="{query}" partner-id="{partner_id}">
-  <a href="https://www.getyourguide.com/{path_to_activities}/?partner_id={partner_id}">
-    Things to do in ...
-  </a>
-</gyg-activities>
-
-<!-- alternative -->
-<gyg-wc widget="activities" type="search" query="{query}" partner-id="{partner_id}">
-  <a href="https://www.getyourguide.com/{path_to_activities}/?partner_id={partner_id}">
-    Things to do in ...
-  </a>
+<gyg-wc url="{location_url}?partner_id={partner_id}" size="{num_items}">
+  <a href="{location_url}?partner_id={partner_id}"> Things to do in ... </a>
 </gyg-wc>
 ```
 
 #### Availability
 
 ```html
-<!-- import "gyg-wc" module -->
-
-<!-- availability widget example -->
-<gyg-availability query="{tour_id}" partner-id="{partner_id}">
-  <a href="https://www.getyourguide.com/{path_to_tour}/?partner_id={partner_id}">
-    Check availability for ...
-  </a>
-</gyg-availability>
-
-<!-- alternative -->
-<gyg-wc widget="availability" query="{tour_id}" partner-id="{partner_id}">
-  <a href="https://www.getyourguide.com/{path_to_tour}/?partner_id={partner_id}">
-    Check availability for ...
-  </a>
+<gyg-wc url="{tour_url}?partner_id={partner_id}">
+  <a href="{tour_url}?partner_id={partner_id}"> Check availability for ... </a>
 </gyg-wc>
 ```
 
-#### City Widget
+#### Location
 
 ```html
-<!-- import "gyg-wc" module -->
+<gyg-wc url="{location_url}?partner_id={partner_id}">
+  <a href="{location_url}?partner_id={partner_id}"> Things to do in ... </a>
+</gyg-wc>
+```
 
-<gyg-city query="{city_id}" partner-id="{partner_id}">
-  <a href="https://www.getyourguide.com/{city_slug}/?partner_id={partner_id}">
-    Things to do in ...
-  </a>
-</gyg-city>
+#### Search
 
-<!-- alternative: city widget example -->
-<gyg-wc widget="city" query="{city_id}" partner-id="{partner_id}">
-  <a href="https://www.getyourguide.com/{city_slug}/?partner_id={partner_id}">
-    Things to do in ...
-  </a>
+```html
+<gyg-wc query="{search_term}" partner-id="{partner_id}">
+  <a href="{search_url}?partner_id={partner_id}"> Things to do in ... </a>
+</gyg-wc>
+```
+
+#### Tours
+
+```html
+<gyg-wc urls="[{tour_url}?partner_id={partner_id},...]">
+  <a href="{tour_url}?partner_id={partner_id}"> Things to do in ... </a>
 </gyg-wc>
 ```
 
