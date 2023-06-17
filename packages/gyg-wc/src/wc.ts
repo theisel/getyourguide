@@ -46,7 +46,10 @@ export class GetYourGuide extends HTMLElement {
   }
 
   connectedCallback() {
-    this.partnerId = this.getAttribute("partner-id") || this.partnerId;
+    this.partnerId =
+      //@ts-expect-error globalThis
+      globalThis.GYG_PARTNER_ID || this.getAttribute("partner-id") || this.partnerId;
+
     this.render();
   }
 
