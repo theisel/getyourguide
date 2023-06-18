@@ -55,7 +55,11 @@ export default defineType({
       of: [{ type: "url" }],
       title: "Exlude Tours",
       description: "URLs to exclude from search results",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) =>
+        Rule.optional().custom((input: string[]) => {
+          const isValid = input.every((url) => parseUrl(url)?.isTourUrl) || false;
+          return isValid || "Check URL's";
+        }),
     },
   ],
 });
