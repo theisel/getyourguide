@@ -43,11 +43,13 @@ export function GetYourGuideForm(props: InputProps) {
 
       <TabPanel aria-labelledby="preview-tab" hidden={view !== "preview"} id="preview-panel">
         <Box marginTop={3}>
-          <gyg-wc {...widgetAttrs} partner-id={partnerId} lang={lang}>
-            <a href={widgetAttrs.url} target="_blank" rel="noopener noreferrer">
-              {title}
-            </a>
-          </gyg-wc>
+          {("query" in widgetAttrs || "url" in widgetAttrs || "urls" in widgetAttrs) && (
+            <gyg-wc {...widgetAttrs} partner-id={partnerId} lang={lang}>
+              <a href={widgetAttrs.url} target="_blank" rel="noopener noreferrer">
+                {title}
+              </a>
+            </gyg-wc>
+          )}
         </Box>
       </TabPanel>
     </>
