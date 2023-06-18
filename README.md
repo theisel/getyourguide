@@ -1,4 +1,4 @@
-# GetYourGuide (Unoffical)
+# GetYourGuide (Unofficial)
 
 &nbsp;
 
