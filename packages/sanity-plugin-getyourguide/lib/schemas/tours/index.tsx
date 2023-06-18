@@ -26,8 +26,9 @@ export default defineType({
       title: "Tour URLs",
       description: "https://www.getyourguide.com/{location}/{tour}",
       validation: (Rule) =>
-        Rule.custom((input: string[] | undefined) => {
-          const isValid = input?.every((url) => parseUrl(url)?.isTourUrl || false);
+        Rule.custom((input?: string[]) => {
+          if (!input) return "Required";
+          const isValid = input.every((url) => parseUrl(url)?.isTourUrl || false);
           return isValid || "Check URLS";
         }),
     },
