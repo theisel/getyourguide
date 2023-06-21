@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useFormValue, type InputProps } from "sanity";
 import { Box, Tab, TabList, TabPanel } from "@sanity/ui";
 import { EditIcon, EyeOpenIcon, EyeClosedIcon } from "@sanity/icons";
@@ -14,7 +14,7 @@ type FormValue = React.JSX.IntrinsicElements["gyg-wc"] & {
 export function GetYourGuideForm(props: InputProps) {
   const [view, setView] = useState<"content" | "preview">("content");
   const { _type, title, ...widgetAttrs } = (useFormValue(props.path) ?? {}) as FormValue;
-  const { partnerId, lang } = props.schemaType.options ?? {};
+  const { partnerId = 0, lang } = props.schemaType.options ?? {};
 
   return (
     <>

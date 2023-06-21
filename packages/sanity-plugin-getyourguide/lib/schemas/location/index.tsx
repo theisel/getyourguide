@@ -1,3 +1,4 @@
+import React from "react";
 import { defineType } from "sanity";
 import { parseUrl } from "gyg-wc/utils";
 import { GetYourGuideForm } from "../../components/Form";
