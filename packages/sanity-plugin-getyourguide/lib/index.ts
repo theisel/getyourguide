@@ -5,11 +5,11 @@ import searchSchema from "./schemas/search";
 import toursSchema from "./schemas/tours";
 
 interface PluginOptions {
-  partnerId: string;
+  partnerId?: string;
   lang?: string;
 }
 
-export const getYourGuide = definePlugin<PluginOptions>((options) => ({
+export const getYourGuide = definePlugin<PluginOptions>((options = {}) => ({
   name: "getYourGuide",
   schema: {
     name: "getYourGuide",
