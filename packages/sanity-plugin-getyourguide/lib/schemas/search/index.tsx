@@ -1,5 +1,5 @@
 import React from "react";
-import { defineType, type ObjectInputProps } from "sanity";
+import { defineType } from "sanity";
 import { GetYourGuideForm } from "../../components/Form";
 import { parseUrl } from "gyg-wc/utils";
 
