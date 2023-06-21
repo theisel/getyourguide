@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useFormValue, type InputProps } from "sanity";
 import { Box, Tab, TabList, TabPanel } from "@sanity/ui";
 import { EditIcon, EyeOpenIcon, EyeClosedIcon } from "@sanity/icons";
