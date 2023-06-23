@@ -12,10 +12,10 @@ export {};
 declare global {
   namespace astroHTML.JSX {
     interface IntrinsicElements {
-      "gyg-availability": GetYourGuideAvailabilityAttributes & IntrinsicAttributes;
-      "gyg-location": GetYourGuideLocationAttributes & IntrinsicAttributes;
-      "gyg-search": GetYourGuideSearchAttributes & IntrinsicAttributes;
-      "gyg-tours": GetYourGuideToursAttributes & IntrinsicAttributes;
+      "gyg-availability": GetYourGuideAvailabilityAttributes & HTMLAttributes;
+      "gyg-location": GetYourGuideLocationAttributes & HTMLAttributes;
+      "gyg-search": GetYourGuideSearchAttributes & HTMLAttributes;
+      "gyg-tours": GetYourGuideToursAttributes & HTMLAttributes;
       "gyg-wc":
         | IntrinsicElements["gyg-availability"]
         | IntrinsicElements["gyg-location"]
