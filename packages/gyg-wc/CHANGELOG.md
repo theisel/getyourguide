@@ -1,5 +1,12 @@
 # gyg-wc
 
+## [0.8.1](https://github.com/theisel/getyourguide/compare/gyg-wc@0.8.0...gyg-wc@0.8.1) (2023-06-23)
+
+
+### Bug Fixes
+
+* **gyg-wc:** astro.d.ts ([#55](https://github.com/theisel/getyourguide/issues/55)) ([386bf73](https://github.com/theisel/getyourguide/commit/386bf736c7bc0cbf9a6ad6850c482d58660f6aea))
+
 ## [0.8.0](https://github.com/theisel/getyourguide/compare/gyg-wc@0.7.1...gyg-wc@0.8.0) (2023-06-17)
 
 ### Features
