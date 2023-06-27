@@ -1,0 +1,8 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "schedule": ["after 9pm and before 3am every weekday"],
+  "ignoreDeps": ["node", "pnpm"]
+}
