@@ -1,6 +1,55 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": ["config:recommended", ":rebaseStalePrs", ":dependencyDashboardApproval"],
   "schedule": ["after 9pm and before 3am every weekday"],
-  "ignoreDeps": ["node", "pnpm"]
+  "ignoreDeps": ["node", "pnpm"],
+  "automergeStrategy": "squash",
+  "prCreation": "status-success",
+  "packageRules": [
+    {
+      "matchFileNames": ["packages/sanity-plugin-getyourguide/package.json"],
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true,
+      "prCreation": "immediate",
+      "groupName": "`sanity-plugin-getyourguide (non-major)`",
+      "groupSlug": "sanity-plugin-getyourguide-dependencies-non-major"
+    },
+    {
+      "matchFileNames": ["packages/sanity-plugin-getyourguide/package.json"],
+      "matchDepTypes": ["dependencies"],
+      "groupName": "`sanity-plugin-getyourguide`",
+      "groupSlug": "sanity-plugin-getyourguide-dependencies"
+    },
+    {
+      "matchFileNames": ["packages/gyg-wc/package.json"],
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true,
+      "groupName": "`gyg-wc (non-major)`",
+      "groupSlug": "gyg-wc-dependencies-non-major"
+    },
+    {
+      "matchFileNames": ["packages/gyg-wc/package.json"],
+      "matchDepTypes": ["dependencies"],
+      "groupName": "`gyg-wc`",
+      "groupSlug": "gyg-wc-dependencies"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true,
+      "groupName": "`dev (non-major)`",
+      "groupSlug": "dev-dependencies-non-major"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["major"],
+      "groupName": "`dev (major)`",
+      "groupSlug": "dev-dependencies-major"
+    }
+  ]
 }
