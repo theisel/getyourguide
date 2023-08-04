@@ -1,9 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", ":rebaseStalePrs", ":dependencyDashboardApproval"],
+  "extends": ["config:recommended", ":rebaseStalePrs"],
   "schedule": ["after 9pm and before 3am every weekday"],
   "ignoreDeps": ["node", "pnpm"],
   "automergeStrategy": "squash",
+  "major": {
+    "dependencyDashboardApproval": true
+  },
   "prCreation": "status-success",
   "packageRules": [
     {
