@@ -22,6 +22,7 @@
     {
       "matchFileNames": ["packages/sanity-plugin-getyourguide/package.json"],
       "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["major"],
       "groupName": "**sanity-plugin-getyourguide**",
       "groupSlug": "sanity-plugin-getyourguide-dependencies"
     },
@@ -37,6 +38,7 @@
     {
       "matchFileNames": ["packages/gyg-wc/package.json"],
       "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["major"],
       "groupName": "**gyg-wc**",
       "groupSlug": "gyg-wc-dependencies"
     },
