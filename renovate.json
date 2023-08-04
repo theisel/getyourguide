@@ -1,9 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", ":rebaseStalePrs", ":dependencyDashboardApproval"],
+  "extends": ["config:recommended", ":rebaseStalePrs"],
   "schedule": ["after 9pm and before 3am every weekday"],
   "ignoreDeps": ["node", "pnpm"],
   "automergeStrategy": "squash",
+  "major": {
+    "dependencyDashboardApproval": true
+  },
   "prCreation": "status-success",
   "packageRules": [
     {
@@ -19,6 +22,7 @@
     {
       "matchFileNames": ["packages/sanity-plugin-getyourguide/package.json"],
       "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["major"],
       "groupName": "**sanity-plugin-getyourguide**",
       "groupSlug": "sanity-plugin-getyourguide-dependencies"
     },
@@ -34,6 +38,7 @@
     {
       "matchFileNames": ["packages/gyg-wc/package.json"],
       "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["major"],
       "groupName": "**gyg-wc**",
       "groupSlug": "gyg-wc-dependencies"
     },
