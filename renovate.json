@@ -7,7 +7,6 @@
   "major": {
     "dependencyDashboardApproval": true
   },
-  "prCreation": "status-success",
   "packageRules": [
     {
       "matchFileNames": ["packages/sanity-plugin-getyourguide/package.json"],
