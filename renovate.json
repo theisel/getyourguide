@@ -31,6 +31,7 @@
       "matchUpdateTypes": ["minor", "patch"],
       "matchCurrentVersion": "!/^0/",
       "automerge": true,
+      "prCreation": "immediate",
       "groupName": "**gyg-wc**",
       "groupSlug": "gyg-wc-dependencies-non-major"
     },
