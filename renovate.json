@@ -7,7 +7,6 @@
   "major": {
     "dependencyDashboardApproval": true
   },
-  "prCreation": "status-success",
   "packageRules": [
     {
       "matchFileNames": ["packages/sanity-plugin-getyourguide/package.json"],
@@ -32,6 +31,7 @@
       "matchUpdateTypes": ["minor", "patch"],
       "matchCurrentVersion": "!/^0/",
       "automerge": true,
+      "prCreation": "immediate",
       "groupName": "**gyg-wc**",
       "groupSlug": "gyg-wc-dependencies-non-major"
     },
@@ -47,6 +47,7 @@
       "matchUpdateTypes": ["minor", "patch"],
       "matchCurrentVersion": "!/^0/",
       "automerge": true,
+      "prCreation": "immediate",
       "groupName": "**dev**",
       "groupSlug": "dev-dependencies"
     },
