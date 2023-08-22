@@ -46,6 +46,7 @@
       "matchUpdateTypes": ["minor", "patch"],
       "matchCurrentVersion": "!/^0/",
       "automerge": true,
+      "prCreation": "immediate",
       "groupName": "**dev**",
       "groupSlug": "dev-dependencies"
     },
