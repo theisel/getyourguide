@@ -43,9 +43,6 @@ jobs:
       - name: Reset to Tag
         run: git reset --hard ${{ steps.get_tag.outputs.tag }}
 
-      - name: Install Dependencies
-        run: pnpm install
-  
       - name: Publish
         run: |
           pkg_name=$(cut -d '@' -f1 <<< '${{ steps.get_tag.outputs.tag }}')
