@@ -13,6 +13,7 @@ type FormValue = React.JSX.IntrinsicElements["gyg-wc"] & {
 
 export function GetYourGuideForm(props: InputProps) {
   const [view, setView] = useState<"content" | "preview">("content");
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { _type, title, ...widgetAttrs } = (useFormValue(props.path) ?? {}) as FormValue;
   const { partnerId = 0, lang } = props.schemaType.options ?? {};
 
