@@ -2,10 +2,9 @@
 
 ## [0.3.2](https://github.com/theisel/getyourguide/compare/sanity-plugin-getyourguide@0.3.1...sanity-plugin-getyourguide@0.3.2) (2023-08-23)
 
-
 ### Bug Fixes
 
-* **sanity-plugin-getyourguide:** lint errors ([#75](https://github.com/theisel/getyourguide/issues/75)) ([484712a](https://github.com/theisel/getyourguide/commit/484712a79fe1ad7afb0fdcda03cd599703d11955))
+- **sanity-plugin-getyourguide:** lint errors ([#75](https://github.com/theisel/getyourguide/issues/75)) ([484712a](https://github.com/theisel/getyourguide/commit/484712a79fe1ad7afb0fdcda03cd599703d11955))
 
 ## [0.3.1](https://github.com/theisel/getyourguide/compare/sanity-plugin-getyourguide@0.3.0...sanity-plugin-getyourguide@0.3.1) (2023-06-21)
 
