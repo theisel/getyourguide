@@ -18,16 +18,19 @@ export type Props = P0 | P1 | P2 | P3;
 export default function GetYourGuide(props: Props) {
   const _props = { ...props, partnerId: "0" } satisfies GetYourGuideProps;
 
-  const attrs = (Object.keys(_props) as Array<keyof typeof _props>).reduce((attrs, prop) => {
-    const key = prop
-      .toString()
-      .replace(/([A-Z])/g, "-$1")
-      .toLowerCase();
+  const attrs = (Object.keys(_props) as Array<keyof typeof _props>).reduce(
+    (attrs, prop) => {
+      const key = prop
+        .toString()
+        .replace(/([A-Z])/g, "-$1")
+        .toLowerCase();
 
-    attrs[key] = _props[prop];
+      attrs[key] = _props[prop];
 
-    return attrs;
-  }, {} as Record<string, unknown>) as unknown as React.JSX.IntrinsicElements["gyg-wc"];
+      return attrs;
+    },
+    {} as Record<string, unknown>
+  ) as unknown as React.JSX.IntrinsicElements["gyg-wc"];
 
   return <gyg-wc {...attrs}></gyg-wc>;
 }
